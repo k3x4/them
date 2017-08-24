@@ -69,12 +69,12 @@ class Layout implements ISection {
                     'select2' => ['allowClear' => false],
                 ],
                 [
-                    'id' => 'general_layout_content-padding',
+                    'id' => 'general_layout_main-wrapper-padding',
                     'type' => 'them_spacing',
                     'mode' => 'padding',
                     'units' => ['px', 'em'],
                     'units_extended' => true,
-                    'title' => __('Content block padding', THEME_DOMAIN),
+                    'title' => __('Main wrapper padding', THEME_DOMAIN),
                     'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
                     'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
                     'default' => [

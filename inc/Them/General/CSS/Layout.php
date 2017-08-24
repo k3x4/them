@@ -20,10 +20,10 @@ class Layout implements ICSS {
         $general = new General\Main\Layout;
 
         $generalPadding = $general->getGeneralPadding();
-        $contentPadding = $general->getContentPadding();
+        $mainWrapperPadding = $general->getMainWrapperPadding();
         
         $generalPadding = Helpers\Converter::spacingToCSS($generalPadding, 'padding');
-        $contentPadding = Helpers\Converter::spacingToCSS($contentPadding, 'padding');
+        $mainWrapperPadding = Helpers\Converter::spacingToCSS($mainWrapperPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
@@ -55,7 +55,7 @@ class Layout implements ICSS {
                 'padding' => $generalPadding
             ],
             '.content.container' => [
-                'padding' => $contentPadding
+                'padding' => $mainWrapperPadding
             ]
         ];
         return $cssBlocks;

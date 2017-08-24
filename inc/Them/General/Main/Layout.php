@@ -32,8 +32,8 @@ class Layout extends Options {
         return $this->options['general-padding'];
     }
     
-    public function getContentPadding(){
-        return $this->options['content-padding'];
+    public function getMainWrapperPadding(){
+        return $this->options['main-wrapper-padding'];
     }
     
     public function getContentClasses(){
