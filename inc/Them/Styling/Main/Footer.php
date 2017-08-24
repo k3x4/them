@@ -8,7 +8,7 @@ use Them\Helpers;
 class Footer extends Options {
     
     public function getBackgroundColor(){
-        return $this->options['background-color'];
+        return Helpers\Converter::RGBAToColor($this->options['background-color']);
     }
 
 }

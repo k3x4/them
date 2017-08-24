@@ -61,7 +61,6 @@ class General implements ISection {
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
                     'default' => [
-                        //'color' => '#FFFFFF',
                         'alpha' => '0'
                     ],
                     'options' => [
@@ -78,18 +77,16 @@ class General implements ISection {
                         'cancel_text' => 'Cancel',
                         'show_buttons' => true,
                         'use_extended_classes' => true,
-                        'palette' => null, // show default
+                        'palette' => null, 
                         'input_text' => 'Select Color'
                     ],
                 ],
                 [
                     'id' => 'styling_general_page-background-image',
                     'type' => 'media',
-                    //'url' => true,
                     'title' => __('Page Background Image', THEME_DOMAIN),
                     'compiler' => 'true',
                     'subtitle' => __('Background Image For Main Content Area.++', THEME_DOMAIN),
-                    //'default' => ['url' => 'http://s.wordpress.org/style/images/codeispoetry.png'],
                 ]
             ]
         ]);

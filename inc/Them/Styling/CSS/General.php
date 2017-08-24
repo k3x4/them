@@ -14,9 +14,6 @@ class General implements ICSS {
         $linkColor = $general->getLinkColor();
         $linkHoverColor = $general->getLinkHoverColor();
         $backgroundColor = $general->getBackgroundColor();
-        if( ! isset($backgroundColor['color']) ){
-            $backgroundColor['color'] = 'transparent';
-        }
         
         $cssBlocks = [];
         $cssBlocks[] = [
@@ -30,17 +27,9 @@ class General implements ICSS {
                 'color' => $linkHoverColor
             ],
             'body #page' => [
-                'background-color' => $backgroundColor['color']
+                'background-color' => $backgroundColor
             ]
         ];
-        
-        if(isset($backgroundColor['rgba'])):
-        $cssBlocks[] = [
-            'body #page' => [
-                'background-color' => $backgroundColor['rgba']
-            ]
-        ];
-        endif;
         
         return $cssBlocks;
     }

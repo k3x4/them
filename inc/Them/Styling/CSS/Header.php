@@ -14,27 +14,39 @@ class Header implements ICSS {
         $menuBackgroundColor = $header->getMenuBackgroundColor();
         
         $menuItemsColor = $header->getMenuItemsTextColor();
-        $menuItemsBackgroundColor = $header->getMenuItemsBackgroundColor();
         $menuItemsHoverColor = $header->getMenuItemsTextHoverColor();
+        $menuItemsBackgroundColor = $header->getMenuItemsBackgroundColor();
         $menuItemsHoverBackgroundColor = $header->getMenuItemsBackgroundHoverColor();
+        
+        $menuSubitemsColor = $header->getMenuSubitemsTextColor();
+        $menuSubitemsHoverColor = $header->getMenuSubitemsTextHoverColor();
+        $menuSubitemsBackgroundColor = $header->getMenuSubitemsBackgroundColor();
+        $menuSubitemsHoverBackgroundColor = $header->getMenuSubitemsBackgroundHoverColor();
         
         $cssBlocks = [];
         $cssBlocks[] = [
-            '.header.container, .header.container-fluid' => [
-                'background-color' => $headerBackgroundColor['color']
+            '.site-header' => [
+                'background-color' => $headerBackgroundColor
             ],
-            '.main-navigation .nav-menu, .main-navigation .nav-menu .sub-menu' => [
-                'background-color' => $menuBackgroundColor['color']
+            '.main-navigation .nav-menu' => [
+                'background-color' => $menuBackgroundColor
             ],
-            '.main-navigation .nav-menu li a, .main-navigation .nav-menu li a:visited' => [
+            '.main-navigation .nav-menu li a, ' .
+            '.main-navigation .nav-menu li a:visited' => [
                 'color' => $menuItemsColor,
                 'background-color' => $menuItemsBackgroundColor
-            ]
+            ],
+            '.main-navigation .nav-menu .sub-menu li a, ' .
+            '.main-navigation .nav-menu .sub-menu li a:visited' => [
+                'color' => $menuSubitemsColor,
+                'background-color' => $menuSubitemsBackgroundColor
+            ],
         ];
         
         if($header->menuItemsHoverTextChange()):
         $cssBlocks[] = [
-            '.main-navigation .nav-menu li a:hover, .main-navigation .nav-menu li a:focus' => [
+            '.main-navigation .nav-menu li a:hover, ' .
+            '.main-navigation .nav-menu li a:focus' => [
                 'color' => $menuItemsHoverColor
             ]
         ];
@@ -42,24 +54,27 @@ class Header implements ICSS {
         
         if($header->menuItemsHoverBackgroundChange()):
         $cssBlocks[] = [
-            '.main-navigation .nav-menu li a:hover, .main-navigation .nav-menu li a:focus' => [
+            '.main-navigation .nav-menu li a:hover, ' .
+            '.main-navigation .nav-menu li a:focus' => [
                 'background-color' => $menuItemsHoverBackgroundColor
             ]
         ];
         endif;
         
-        if(isset($headerBackgroundColor['rgba'])):
+        if($header->menuSubitemsHoverTextChange()):
         $cssBlocks[] = [
-            '.header.container, .header.container-fluid' => [
-                'background-color' => $headerBackgroundColor['rgba']
+            '.main-navigation .nav-menu .sub-menu li a:hover, ' .
+            '.main-navigation .nav-menu .sub-menu li a:focus' => [
+                'color' => $menuSubitemsHoverColor
             ]
         ];
         endif;
         
-        if(isset($menuBackgroundColor['rgba'])):
+        if($header->menuSubitemsHoverBackgroundChange()):
         $cssBlocks[] = [
-            '.main-navigation .nav-menu' => [
-                'background-color' => $menuBackgroundColor['rgba']
+            '.main-navigation .nav-menu .sub-menu li a:hover, ' .
+            '.main-navigation .nav-menu .sub-menu li a:focus' => [
+                'background-color' => $menuSubitemsHoverBackgroundColor
             ]
         ];
         endif;

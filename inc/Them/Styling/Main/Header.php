@@ -8,11 +8,11 @@ use Them\Helpers;
 class Header extends Options {
     
     public function getHeaderBackgroundColor(){
-        return $this->options['background-header-color'];
+        return Helpers\Converter::RGBAToColor($this->options['background-header-color']);
     }
     
     public function getMenuBackgroundColor(){
-        return $this->options['background-menu-color'];
+        return Helpers\Converter::RGBAToColor($this->options['background-menu-color']);
     }
     
     public function getMenuItemsTextColor(){
@@ -28,7 +28,7 @@ class Header extends Options {
     }
     
     public function getMenuItemsBackgroundColor(){
-        return $this->options['menu-items-background-color'];
+        return Helpers\Converter::RGBAToColor($this->options['menu-items-background-color']);
     }
     
     public function menuItemsHoverBackgroundChange(){
@@ -36,7 +36,31 @@ class Header extends Options {
     }
     
     public function getMenuItemsBackgroundHoverColor(){
-        return $this->options['menu-items-background-hover-color'];
+        return Helpers\Converter::RGBAToColor($this->options['menu-items-background-hover-color']);
     }
-
+    
+    public function getMenuSubitemsTextColor(){
+        return $this->options['menu-subitems-text-color'];
+    }
+    
+    public function menuSubitemsHoverTextChange(){
+        return $this->options['menu-subitems-text-hover-color-enable'];
+    }
+    
+    public function getMenuSubitemsTextHoverColor(){
+        return $this->options['menu-subitems-text-hover-color'];
+    }
+    
+    public function getMenuSubitemsBackgroundColor(){
+        return Helpers\Converter::RGBAToColor($this->options['menu-subitems-background-color']);
+    }
+    
+    public function menuSubitemsHoverBackgroundChange(){
+        return $this->options['menu-subitems-background-hover-color-enable'];
+    }
+    
+    public function getMenuSubitemsBackgroundHoverColor(){
+        return Helpers\Converter::RGBAToColor($this->options['menu-subitems-background-hover-color']);
+    }
+    
 }

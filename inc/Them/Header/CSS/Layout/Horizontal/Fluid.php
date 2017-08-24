@@ -6,7 +6,7 @@ use Them\Header;
 use Them\ICSS;
 use Them\Helpers;
 
-class Fluid extends Header\Layout implements ICSS{
+class Fluid extends Header\Main\Layout implements ICSS{
     
     public function getCSS() {
         $header = new Header\Main\Layout;

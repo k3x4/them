@@ -15,17 +15,9 @@ class Footer implements ICSS {
         $cssBlocks = [];
         $cssBlocks[] = [
             '.footer.container, .footer.container-fluid' => [
-                'background-color' => $backgroundColor['color']
+                'background-color' => $backgroundColor
             ]
         ];
-        
-        if(isset($backgroundColor['rgba'])):
-        $cssBlocks[] = [
-            '.footer.container, .footer.container-fluid' => [
-                'background-color' => $backgroundColor['rgba']
-            ]
-        ];
-        endif;
         
         return $cssBlocks;
     }

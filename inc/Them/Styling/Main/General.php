@@ -20,7 +20,7 @@ class General extends Options {
     }
     
     public function getBackgroundColor(){
-        return $this->options['page-background-color'];
+        return Helpers\Converter::RGBAToColor($this->options['page-background-color']);
     }
     
     public function getBackgroundImage(){
