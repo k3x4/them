@@ -1,0 +1,96 @@
+/*** REDUX PREVIEW ***/
+
+input.disabled, input:disabled, select.disabled, select:disabled, textarea.disabled, textarea:disabled {
+    background: rgba(255,255,255,0);
+    color: rgba(51,51,51,.3);
+}
+
+.arrow-disabled{
+    color: #ddd;
+}
+
+.arrow-enabled{
+    color: #333;
+}
+/* SIDEBARS */
+
+.redux-container .form-table .sidebars_preview{
+    background-color: #f7f7f7;
+    height:300px;
+    border: 1px solid #ddd;
+    padding-top:20px;
+}
+
+.redux-container .form-table .sidebars_preview .row div{
+    height: 300px;
+}
+
+.redux-container .form-table .sidebars_preview .content span{
+    background-color: #d8d8d8;
+}
+
+.redux-container .form-table .sidebars_preview .sidebar1 span,
+.redux-container .form-table .sidebars_preview .sidebar2 span{
+    background-color: #e8edef;
+}
+
+.redux-container .form-table .sidebars_preview .content span,
+.redux-container .form-table .sidebars_preview .sidebar1 span,
+.redux-container .form-table .sidebars_preview .sidebar2 span{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #999;
+    line-height: 280px;
+    border: 1px solid #ddd;
+}
+
+.redux-container-image_select .redux-image-select img{
+    margin-right: 10px;
+}
+
+
+/* FOOTER */
+
+.redux-container .form-table .footer-preview{
+    background-color: #444;
+    color: #eee;
+    text-align: center;
+}
+
+.redux-container .form-table .footer-preview .row{
+    padding: 0 40px;
+}
+
+.redux-container .form-table .footer-preview .row .content-wrapper{
+    padding: 20px 0;
+}
+
+.redux-container .form-table .footer-preview .row .content-wrapper div{
+    padding: 20px;
+    border: 2px dashed #777;
+}
+
+.redux-container .form-table .footer-preview .row .size-text{
+    font-size: 36px;
+    font-weight: bold;
+    color: #999;
+}
+
+.redux-container .form-table .footer-preview.one-row{
+    min-height: 150px;
+}
+
+.redux-container .form-table .footer-preview.two-rows{
+    min-height: 300px;
+}
+
+.redux-container .form-table .footer-preview.three-rows{
+    min-height: 450px;
+}
+
+.redux-container .form-table .footer-preview .buttom-bar{
+    height: 30px;
+    background-color: #888;
+}

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "tubalmartin/cssmin": "^4.1",
+        "twbs/bootstrap": "^3.3"
+    }
+}
