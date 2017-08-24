@@ -54,7 +54,7 @@ class Layout extends Options {
             SIDEBAR_SECOND => 'second'
         ];
         
-        $classes = ['widget-area', 'sidebar_' . $sidebarID[$sidebar]];
+        $classes = ['widget-area-wrapper', 'sidebar_' . $sidebarID[$sidebar]];
         $classes[] = $bootstrap->getColumnsClass($width);
         $classes[] = $bootstrap->getPullClass($pullWidth);
         $classes = array_filter($classes);
@@ -64,12 +64,33 @@ class Layout extends Options {
         return implode(' ', $classes); 
     }
     
+    public function getSidebarMargin($sidebar, $side){
+        
+    }
+    
     public function firstSidebarActive() {
         return ($this->getSidebarsCount() >= 1) ? true : false;
     }
 
     public function secondSidebarActive() {
         return ($this->getSidebarsCount() == 2) ? true : false;
+    }
+    
+    public function getScheme() {
+        return $this->options['scheme'];
+    }
+    
+    public function getSchemeName() {
+        $scheme = $this->getScheme();
+        $schemeKeys = [
+            SCHEME_CONTENT                      => 'Content',
+            SCHEME_SIDEBAR_CONTENT              => 'SidebarContent',
+            SCHEME_CONTENT_SIDEBAR              => 'ContentSidebar',
+            SCHEME_SIDEBAR_CONTENT_SIDEBAR      => 'SidebarContentSidebar',
+            SCHEME_SIDEBAR_SIDEBAR_CONTENT      => 'SidebarSidebarContent',
+            SCHEME_CONTENT_SIDEBAR_SIDEBAR      => 'ContentSidebarSidebar'
+        ];
+        return $schemeKeys[$scheme];
     }
 
 }

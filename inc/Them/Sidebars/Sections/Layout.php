@@ -20,32 +20,32 @@ class Layout implements ISection {
                     'title' => __('Main Layout', THEME_DOMAIN),
                     'subtitle' => __('Select main content and sidebar alignment. Choose between 1, 2 or 3 column layout.', 'redux-framework-demo'),
                     'options' => [
-                        '0-false-false' => [
+                        SCHEME_CONTENT => [
                             'alt' => '1 Column',
                             'img' => \ReduxFramework::$_url . 'assets/img/1col.png'
                         ],
-                        '1-left-false' => [
+                        SCHEME_SIDEBAR_CONTENT => [
                             'alt' => '2 Column Left',
                             'img' => \ReduxFramework::$_url . 'assets/img/2cl.png'
                         ],
-                        '1-right-false' => [
+                        SCHEME_CONTENT_SIDEBAR => [
                             'alt' => '2 Column Right',
                             'img' => \ReduxFramework::$_url . 'assets/img/2cr.png'
                         ],
-                        '2-left-right' => [
+                        SCHEME_SIDEBAR_CONTENT_SIDEBAR => [
                             'alt' => '3 Column Middle',
                             'img' => \ReduxFramework::$_url . 'assets/img/3cm.png'
                         ],
-                        '2-left-left' => [
+                        SCHEME_SIDEBAR_SIDEBAR_CONTENT => [
                             'alt' => '3 Column Left',
                             'img' => \ReduxFramework::$_url . 'assets/img/3cl.png'
                         ],
-                        '2-right-right' => [
+                        SCHEME_CONTENT_SIDEBAR_SIDEBAR => [
                             'alt' => '3 Column Right',
                             'img' => \ReduxFramework::$_url . 'assets/img/3cr.png'
                         ]
                     ],
-                    'default' => '1-right-false'
+                    'default' => SCHEME_CONTENT_SIDEBAR
                 ],
                 [
                     'id' => 'sidebars_layout_count-1-sidebar-1-width',
@@ -123,7 +123,6 @@ class Layout implements ISection {
                     'title' => __('Content width', THEME_DOMAIN),
                     'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
                     'desc' => __('', THEME_DOMAIN),
-                    // Must provide key => value pairs for select options
                     'options' => [
                         '6' => '50%',
                         '7' => '58.33%',
@@ -142,7 +141,7 @@ class Layout implements ISection {
                     'subtitle' => __('Subtitle text goes here.', THEME_DOMAIN),
                     'desc' => __('This is the description field for additional info.', THEME_DOMAIN),
                     'content' => file_get_contents(THEME_DIR . '/inc/preview/sidebars/nosidebar.html'),
-                    'required' => ['sidebars_layout_scheme', '=', '0-false-false']
+                    'required' => ['sidebars_layout_scheme', '=', SCHEME_CONTENT]
                 ],
                 [
                     'id' => 'sidebars_layout_count-1-preview-left',
@@ -151,7 +150,7 @@ class Layout implements ISection {
                     'subtitle' => __('Subtitle text goes here.', THEME_DOMAIN),
                     'desc' => __('This is the description field for additional info.', THEME_DOMAIN),
                     'content' => file_get_contents(THEME_DIR . '/inc/preview/sidebars/side-content.html'),
-                    'required' => ['sidebars_layout_scheme', '=', '1-left-false']
+                    'required' => ['sidebars_layout_scheme', '=', SCHEME_SIDEBAR_CONTENT]
                 ],
                 [
                     'id' => 'sidebars_layout_count-1-preview-right',
@@ -160,7 +159,7 @@ class Layout implements ISection {
                     'subtitle' => __('Subtitle text goes here.', THEME_DOMAIN),
                     'desc' => __('This is the description field for additional info.', THEME_DOMAIN),
                     'content' => file_get_contents(THEME_DIR . '/inc/preview/sidebars/content-side.html'),
-                    'required' => ['sidebars_layout_scheme', '=', '1-right-false']
+                    'required' => ['sidebars_layout_scheme', '=', SCHEME_CONTENT_SIDEBAR]
                 ],
                 [
                     'id' => 'sidebars_layout_count-2-preview-left-right',
@@ -169,7 +168,7 @@ class Layout implements ISection {
                     'subtitle' => __('Subtitle text goes here.', THEME_DOMAIN),
                     'desc' => __('This is the description field for additional info.', THEME_DOMAIN),
                     'content' => file_get_contents(THEME_DIR . '/inc/preview/sidebars/side-content-side.html'),
-                    'required' => ['sidebars_layout_scheme', '=', '2-left-right']
+                    'required' => ['sidebars_layout_scheme', '=', SCHEME_SIDEBAR_CONTENT_SIDEBAR]
                 ],
                 [
                     'id' => 'sidebars_layout_count-2-preview-left-left',
@@ -178,7 +177,7 @@ class Layout implements ISection {
                     'subtitle' => __('Subtitle text goes here.', THEME_DOMAIN),
                     'desc' => __('This is the description field for additional info.', THEME_DOMAIN),
                     'content' => file_get_contents(THEME_DIR . '/inc/preview/sidebars/side-side-content.html'),
-                    'required' => ['sidebars_layout_scheme', '=', '2-left-left']
+                    'required' => ['sidebars_layout_scheme', '=', SCHEME_SIDEBAR_SIDEBAR_CONTENT]
                 ],
                 [
                     'id' => 'sidebars_layout_count-2-preview-right-right',
@@ -187,7 +186,7 @@ class Layout implements ISection {
                     'subtitle' => __('Subtitle text goes here.', THEME_DOMAIN),
                     'desc' => __('This is the description field for additional info.', THEME_DOMAIN),
                     'content' => file_get_contents(THEME_DIR . '/inc/preview/sidebars/content-side-side.html'),
-                    'required' => ['sidebars_layout_scheme', '=', '2-right-right']
+                    'required' => ['sidebars_layout_scheme', '=', SCHEME_CONTENT_SIDEBAR_SIDEBAR]
                 ]
             ]
         ]);

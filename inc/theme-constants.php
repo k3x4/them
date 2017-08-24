@@ -18,6 +18,13 @@ define('ORIENTATION_VERTICAL_TYPE1_RIGHT',          'v1r');
 define('ORIENTATION_VERTICAL_TYPE2_LEFT',           'v2l');
 define('ORIENTATION_VERTICAL_TYPE2_RIGHT',          'v2r');
 
+define('SCHEME_CONTENT',                            '0-false-false');
+define('SCHEME_SIDEBAR_CONTENT',                    '1-left-false');
+define('SCHEME_CONTENT_SIDEBAR',                    '1-right-false');
+define('SCHEME_SIDEBAR_CONTENT_SIDEBAR',            '2-left-right');
+define('SCHEME_SIDEBAR_SIDEBAR_CONTENT',            '2-left-left');
+define('SCHEME_CONTENT_SIDEBAR_SIDEBAR',            '2-right-right');
+
 define('THEM_CLASS_GENERAL',                        'Them\\General\\Main');
 define('THEM_CLASS_HEADER',                         'Them\\Header\\Main');
 define('THEM_CLASS_FOOTER',                         'Them\\Footer\\Main');
