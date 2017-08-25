@@ -12,22 +12,21 @@ class SidebarContent implements ICSS{
         $sidebars = new Sidebars\Main\Layout;
         $content = new Content;
         
-        $padding = $sidebars->getSidebarPadding(SIDEBAR_FIRST);
-        $padding = Helpers\Converter::spacingToCSS($padding, 'padding');
+        $wrapperPadding = $sidebars->getSidebarWrapperPadding(SIDEBAR_FIRST);
+        $wrapperPadding = Helpers\Converter::spacingToCSS($wrapperPadding, 'padding');
         
-        $margin = $sidebars->getSidebarMargin(SIDEBAR_FIRST);
-        $margin = Helpers\Converter::spacingToCSS($margin, 'margin');
+        $mainPadding = $sidebars->getSidebarMainPadding(SIDEBAR_FIRST);
+        $mainPadding = Helpers\Converter::spacingToCSS($mainPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
             '.content.container .widget-area-wrapper, ' .
             '.content.container-fluid .widget-area-wrapper' => [
-                'padding' => '0'
+                'padding' => $wrapperPadding
             ],
             '.content.container .widget-area, ' .
             '.content.container-fluid .widget-area' => [
-                'padding' => $padding,
-                'margin' => $margin
+                'padding' => $mainPadding
             ]
         ];
  

@@ -18,8 +18,8 @@ class Content implements ICSS {
             '.content.container, .content.container-fluid' => [
                 'background-color' => $wrapperBackgroundColor
             ],
-            '.content.container .content-area #main, ' .
-            '.content.container-fluid .content-area #main, ' .
+            '.content.container .content-area-wrapper #main, ' .
+            '.content.container-fluid .content-area-wrapper #main, ' .
             '.content.container .widget-area, ' .
             '.content.container-fluid .widget-area' => [
                 'background-color' => $blocksBackgroundColor

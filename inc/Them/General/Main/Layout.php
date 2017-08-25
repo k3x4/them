@@ -46,7 +46,7 @@ class Layout extends Options {
         $sidebar = new Sidebars\Main\Layout;
         $contentWidth = $sidebar->getContentWidth();
         
-        $classes = ['content-area'];
+        $classes = ['content-area-wrapper'];
         $classes[] = $bootstrap->getColumnsClass($contentWidth);
         $classes[] = $bootstrap->getPushClass($pushWidth);
         $classes = array_filter($classes);

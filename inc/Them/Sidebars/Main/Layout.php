@@ -25,16 +25,16 @@ class Layout extends Options {
         return intval($width);
     }
     
-    public function getSidebarMargin($sidebar){
+    public function getSidebarWrapperPadding($sidebar){
         $count = $this->getSidebarsCount();
-        $setting = 'sidebar-' . $sidebar . '-margin';
-        $margin = $this->options[$setting];
-        return $margin;
+        $setting = 'sidebar-' . $sidebar . '-wrapper-padding';
+        $padding = $this->options[$setting];
+        return $padding;
     }
     
-    public function getSidebarPadding($sidebar){
+    public function getSidebarMainPadding($sidebar){
         $count = $this->getSidebarsCount();
-        $setting = 'sidebar-' . $sidebar . '-padding';
+        $setting = 'sidebar-' . $sidebar . '-main-padding';
         $padding = $this->options[$setting];
         return $padding;
     }
@@ -48,12 +48,12 @@ class Layout extends Options {
         return BOOTSTRAP_COLUMNS_SIZE;
     }
     
-    public function getContentPadding(){
-        return $this->options['content-padding'];
+    public function getContentWrapperPadding(){
+        return $this->options['content-wrapper-padding'];
     }
     
-    public function getContentMargin(){
-        return $this->options['content-margin'];
+    public function getContentMainPadding(){
+        return $this->options['content-main-padding'];
     }
     
     public function getSidebarClasses($sidebar){

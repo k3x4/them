@@ -11,22 +11,21 @@ class Content implements ICSS{
     public function getCSS() {
         $sidebars = new Sidebars\Main\Layout;
         
-        $padding = $sidebars->getContentPadding();
-        $padding = Helpers\Converter::spacingToCSS($padding, 'padding');
+        $wrapperPadding = $sidebars->getContentWrapperPadding();
+        $wrapperPadding = Helpers\Converter::spacingToCSS($wrapperPadding, 'padding');
         
-        $margin = $sidebars->getContentMargin();
-        $margin = Helpers\Converter::spacingToCSS($margin, 'margin');
+        $mainPadding = $sidebars->getContentMainPadding();
+        $mainPadding = Helpers\Converter::spacingToCSS($mainPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
-            '.content.container .content-area, ' .
-            '.content.container-fluid .content-area' => [
-                'padding' => '0'
+            '.content.container .content-area-wrapper, ' .
+            '.content.container-fluid .content-area-wrapper' => [
+                'padding' => $wrapperPadding
             ],
-            '.content.container .content-area #main, ' .
-            '.content.container-fluid .content-area #main' => [
-                'padding' => $padding,
-                'margin' => $margin
+            '.content.container .content-area-wrapper #main, ' .
+            '.content.container-fluid .content-area-wrapper #main' => [
+                'padding' => $mainPadding
             ]
         ];
         

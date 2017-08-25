@@ -12,33 +12,35 @@ class SidebarSidebarContent implements ICSS{
         $sidebars = new Sidebars\Main\Layout;
         $content = new Content;
         
-        $paddingFirstSidebar = $sidebars->getSidebarPadding(SIDEBAR_FIRST);
-        $paddingFirstSidebar = Helpers\Converter::spacingToCSS($paddingFirstSidebar, 'padding');
+        $wrapperPaddingFirstSidebar = $sidebars->getSidebarWrapperPadding(SIDEBAR_FIRST);
+        $wrapperPaddingFirstSidebar = Helpers\Converter::spacingToCSS($wrapperPaddingFirstSidebar, 'padding');
         
-        $marginFirstSidebar = $sidebars->getSidebarMargin(SIDEBAR_FIRST);
-        $marginFirstSidebar = Helpers\Converter::spacingToCSS($marginFirstSidebar, 'margin');
+        $mainPaddingFirstSidebar = $sidebars->getSidebarMainPadding(SIDEBAR_FIRST);
+        $mainPaddingFirstSidebar = Helpers\Converter::spacingToCSS($mainPaddingFirstSidebar, 'padding');
         
-        $paddingSecondSidebar = $sidebars->getSidebarPadding(SIDEBAR_SECOND);
-        $paddingSecondSidebar = Helpers\Converter::spacingToCSS($paddingSecondSidebar, 'padding');
+        $wrapperPaddingSecondSidebar = $sidebars->getSidebarWrapperPadding(SIDEBAR_SECOND);
+        $wrapperPaddingSecondSidebar = Helpers\Converter::spacingToCSS($wrapperPaddingSecondSidebar, 'padding');
         
-        $marginSecondSidebar = $sidebars->getSidebarMargin(SIDEBAR_SECOND);
-        $marginSecondSidebar = Helpers\Converter::spacingToCSS($marginSecondSidebar, 'margin');
+        $mainPaddingSecondSidebar = $sidebars->getSidebarMainPadding(SIDEBAR_SECOND);
+        $mainPaddingSecondSidebar = Helpers\Converter::spacingToCSS($mainPaddingSecondSidebar, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
-            '.content.container .widget-area-wrapper, ' .
-            '.content.container-fluid .widget-area-wrapper' => [
-                'padding' => '0'
+            '.content.container .widget-area-wrapper.sidebar_first, ' .
+            '.content.container-fluid .widget-area-wrapper.sidebar_first' => [
+                'padding' => $wrapperPaddingFirstSidebar
+            ],
+            '.content.container .widget-area-wrapper.sidebar_second, ' .
+            '.content.container-fluid .widget-area-wrapper.sidebar_second' => [
+                'padding' => $wrapperPaddingSecondSidebar
             ],
             '.content.container .sidebar_first .widget-area, ' .
             '.content.container-fluid .sidebar_first .widget-area' => [
-                'padding' => $paddingFirstSidebar,
-                'margin' => $marginFirstSidebar
+                'padding' => $mainPaddingFirstSidebar
             ],
             '.content.container .sidebar_second .widget-area, ' .
             '.content.container-fluid .sidebar_second .widget-area' => [
-                'padding' => $paddingSecondSidebar,
-                'margin' => $marginSecondSidebar
+                'padding' => $mainPaddingSecondSidebar
             ]
         ];
  
