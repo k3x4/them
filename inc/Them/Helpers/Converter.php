@@ -51,10 +51,10 @@ class Converter {
     }
     
     public static function RGBAToColor($colorArray){
-        if( isset($colorArray['rgba']) ){
+        if( isset($colorArray['rgba']) && $colorArray['rgba'] ){
             return $colorArray['rgba'];
         }
-        if( isset($colorArray['color']) ){
+        if( isset($colorArray['color']) && $colorArray['color'] ){
             return $colorArray['color'];
         }
         return 'transparent';

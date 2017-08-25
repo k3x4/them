@@ -80,9 +80,9 @@ class Layout implements ISection {
                     'default' => [
                         'sameall' => '0',
                         'padding-top' => '30px',
-                        'padding-right' => '20px',
+                        'padding-right' => '0px',
                         'padding-bottom' => '50px',
-                        'padding-left' => '20px',
+                        'padding-left' => '0px',
                         'units' => 'px',
                     ],
                     'select2' => ['allowClear' => false],

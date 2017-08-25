@@ -47,6 +47,15 @@ class Layout implements ISection {
                     ],
                     'default' => SCHEME_CONTENT_SIDEBAR
                 ],
+                
+                /*** SIDEBAR 1 ***/
+                [
+                    'id' => 'sidebars_layout_section-sidebar-1-start',
+                    'type' => 'section',
+                    'title' => __('Sidebar 1', THEME_DOMAIN),
+                    'indent' => true ,
+                    'required' => ['sidebars_layout_scheme', 'not_contain', '0-']
+                ],
                 [
                     'id' => 'sidebars_layout_count-1-sidebar-1-width',
                     'type' => 'select',
@@ -62,24 +71,6 @@ class Layout implements ISection {
                         '6' => '50%',
                     ],
                     'default' => '3',
-                    'select2' => ['allowClear' => false],
-                    'required' => ['sidebars_layout_scheme', 'contains', '1-']
-                ],
-                [
-                    'id' => 'sidebars_layout_count-1-content-width',
-                    'type' => 'select',
-                    'title' => __('Content width', THEME_DOMAIN),
-                    'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
-                    'desc' => __('', THEME_DOMAIN),
-                    'options' => [
-                        '6' => '50%',
-                        '7' => '58.33%',
-                        '8' => '66.66%',
-                        '9' => '75%',
-                        '10' => '83.33%',
-                        '11' => '91.66%',
-                    ],
-                    'default' => '9',
                     'select2' => ['allowClear' => false],
                     'required' => ['sidebars_layout_scheme', 'contains', '1-']
                 ],
@@ -100,6 +91,61 @@ class Layout implements ISection {
                     'select2' => ['allowClear' => false],
                     'required' => ['sidebars_layout_scheme', 'contains', '2-']
                 ],
+                                [
+                    'id' => 'sidebars_layout_sidebar-1-margin',
+                    'type' => 'them_spacing',
+                    'mode' => 'margin',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Sidebar 1 margin', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '0',
+                        'margin-top' => '0px',
+                        'margin-right' => '15px',
+                        'margin-bottom' => '0px',
+                        'margin-left' => '15px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                    'required' => ['sidebars_layout_scheme', 'not_contain', '0-']
+                ],
+                [
+                    'id' => 'sidebars_layout_sidebar-1-padding',
+                    'type' => 'them_spacing',
+                    'mode' => 'padding',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Sidebar 1 padding', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '1',
+                        'padding-top' => '20px',
+                        'padding-right' => '20px',
+                        'padding-bottom' => '20px',
+                        'padding-left' => '20px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                    'required' => ['sidebars_layout_scheme', 'not_contain', '0-']
+                ],
+                [
+                    'id'     => 'sidebars_layout_section-sidebar-1-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                    'required' => ['sidebars_layout_scheme', 'not_contain', '0-']
+                ],
+                
+                /*** SIDEBAR 2 ***/
+                [
+                    'id' => 'sidebars_layout_section-sidebar-2-start',
+                    'type' => 'section',
+                    'title' => __('Sidebar 2', THEME_DOMAIN),
+                    'indent' => true ,
+                    'required' => ['sidebars_layout_scheme', 'contains', '2-']
+                ],
                 [
                     'id' => 'sidebars_layout_count-2-sidebar-2-width',
                     'type' => 'select',
@@ -118,6 +164,78 @@ class Layout implements ISection {
                     'required' => ['sidebars_layout_scheme', 'contains', '2-']
                 ],
                 [
+                    'id' => 'sidebars_layout_sidebar-2-margin',
+                    'type' => 'them_spacing',
+                    'mode' => 'margin',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Sidebar 2 margin', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '0',
+                        'margin-top' => '0px',
+                        'margin-right' => '15px',
+                        'margin-bottom' => '0px',
+                        'margin-left' => '15px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                    'required' => ['sidebars_layout_scheme', 'contains', '2-']
+                ],
+                [
+                    'id' => 'sidebars_layout_sidebar-2-padding',
+                    'type' => 'them_spacing',
+                    'mode' => 'padding',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Sidebar 2 padding', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '1',
+                        'padding-top' => '20px',
+                        'padding-right' => '20px',
+                        'padding-bottom' => '20px',
+                        'padding-left' => '20px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                    'required' => ['sidebars_layout_scheme', 'contains', '2-']
+                ],
+                [
+                    'id'     => 'sidebars_layout_section-sidebar-2-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                    'required' => ['sidebars_layout_scheme', 'contains', '2-']
+                ],
+
+                /*** CONTENT ***/
+                [
+                    'id' => 'sidebars_layout_section-content-start',
+                    'type' => 'section',
+                    'title' => __('Content', THEME_DOMAIN),
+                    'indent' => true
+                ],
+                [
+                    'id' => 'sidebars_layout_count-1-content-width',
+                    'type' => 'select',
+                    'title' => __('Content width', THEME_DOMAIN),
+                    'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
+                    'desc' => __('', THEME_DOMAIN),
+                    'options' => [
+                        '6' => '50%',
+                        '7' => '58.33%',
+                        '8' => '66.66%',
+                        '9' => '75%',
+                        '10' => '83.33%',
+                        '11' => '91.66%',
+                    ],
+                    'default' => '9',
+                    'select2' => ['allowClear' => false],
+                    'required' => ['sidebars_layout_scheme', 'contains', '1-']
+                ],
+                [
                     'id' => 'sidebars_layout_count-2-content-width',
                     'type' => 'select',
                     'title' => __('Content width', THEME_DOMAIN),
@@ -134,6 +252,51 @@ class Layout implements ISection {
                     'select2' => ['allowClear' => false],
                     'required' => ['sidebars_layout_scheme', 'contains', '2-']
                 ],
+                [
+                    'id' => 'sidebars_layout_content-margin',
+                    'type' => 'them_spacing',
+                    'mode' => 'margin',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Content block margin', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '0',
+                        'margin-top' => '0px',
+                        'margin-right' => '15px',
+                        'margin-bottom' => '0px',
+                        'margin-left' => '15px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                ],
+                [
+                    'id' => 'sidebars_layout_content-padding',
+                    'type' => 'them_spacing',
+                    'mode' => 'padding',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Content block padding', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '1',
+                        'padding-top' => '20px',
+                        'padding-right' => '20px',
+                        'padding-bottom' => '20px',
+                        'padding-left' => '20px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                ],
+                [
+                    'id'     => 'sidebars_layout_section-content-end',
+                    'type'   => 'section',
+                    'indent' => false
+                ],
+                
+                /*** PREVIEW ***/
                 [
                     'id' => 'sidebars_layout_count-0-preview',
                     'type' => 'raw',

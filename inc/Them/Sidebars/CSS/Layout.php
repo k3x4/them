@@ -12,7 +12,7 @@ class Layout implements ICSS {
     
     public function __construct() {
         $sidebars = new Sidebars\Main\Layout;
-        $scheme = $header->getSchemeName();
+        $scheme = $sidebars->getSchemeName();
         $this->type = Helpers\Factory::make(__CLASS__, $scheme);
     }
     
