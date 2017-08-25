@@ -28,16 +28,18 @@ class Layout extends Options {
         return intval($options[$setting]['width']);
     }
     
-    public function getPadding(){
-        return $this->options['padding'];
+    public function getWrapperPadding(){
+        return $this->options['wrapper-padding'];
     }
     
-    public function getPaddingWidgets(){
-        return $this->options['padding-widgets'];
+    public function getWidgetsPadding($row){
+        $setting = 'row-' . $row . '-widgets-padding';
+        return $this->options[$setting];
     }
     
     public function getContainerClass() {
         $classes = 'footer ';
+        $classes .= $this->getRowsTemplate() . ' ';
 
         $options = Helpers\OverrideOptions::get(__CLASS__, THEM_CLASS_GENERAL, 'container-general');
         if ($options['container-type'] == CONTAINER_FIXED) {
@@ -55,6 +57,22 @@ class Layout extends Options {
     
     public function getRowsTemplate(){
         return 'rows-' . $this->getRows();
+    }
+    
+    public function getRowsName(){
+        $rows = $this->getRows();
+        switch($rows){
+            case FOOTER_ROW_1:
+                return 'RowsOne';
+                break;
+            case FOOTER_ROW_2:
+                return 'RowsTwo';
+                break;
+            case FOOTER_ROW_3:
+                return 'RowsThree';
+                break;
+        }
+        return null;
     }
     
     public function getRowWidgetsSize($row){

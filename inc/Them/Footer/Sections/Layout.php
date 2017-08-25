@@ -58,6 +58,25 @@ class Layout implements ISection {
                     'required' => ['footer_layout_container-type', '=', CONTAINER_FLUID]
                 ],
                 [
+                    'id' => 'footer_layout_wrapper-padding',
+                    'type' => 'them_spacing',
+                    'mode' => 'padding',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Wrapper padding', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '0',
+                        'padding-top' => '0px',
+                        'padding-right' => '15px',
+                        'padding-bottom' => '0px',
+                        'padding-left' => '15px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                ],
+                [
                     'id' => 'footer_layout_rows',
                     'type' => 'select',
                     'title' => __('Rows', THEME_DOMAIN),
@@ -70,6 +89,14 @@ class Layout implements ISection {
                     ],
                     'default' => '1',
                     'select2' => ['allowClear' => false]
+                ],
+                
+                /*** ROW 1 ***/
+                [
+                    'id' => 'footer_layout_section-rows-1-start',
+                    'type' => 'section',
+                    'title' => __('Row 1', THEME_DOMAIN),
+                    'indent' => true ,
                 ],
                 [
                     'id' => 'footer_layout_rows-1-columns',
@@ -85,6 +112,39 @@ class Layout implements ISection {
                     ],
                     'default' => '4',
                     'select2' => ['allowClear' => false]
+                ],
+                [
+                    'id' => 'footer_layout_row-1-widgets-padding',
+                    'type' => 'them_spacing',
+                    'mode' => 'padding',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Widgets padding', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '1',
+                        'padding-top' => '20px',
+                        'padding-right' => '20px',
+                        'padding-bottom' => '20px',
+                        'padding-left' => '20px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                ],
+                [
+                    'id'     => 'footer_layout_section-rows-1-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ],
+                
+                /*** ROW 2 ***/
+                [
+                    'id' => 'footer_layout_section-rows-2-start',
+                    'type' => 'section',
+                    'title' => __('Row 2', THEME_DOMAIN),
+                    'indent' => true ,
+                    'required' => ['footer_layout_rows', '>', '1']
                 ],
                 [
                     'id' => 'footer_layout_rows-2-columns',
@@ -103,6 +163,41 @@ class Layout implements ISection {
                     'required' => ['footer_layout_rows', '>', '1']
                 ],
                 [
+                    'id' => 'footer_layout_row-2-widgets-padding',
+                    'type' => 'them_spacing',
+                    'mode' => 'padding',
+                    'units' => ['px', 'em'],
+                    'units_extended' => true,
+                    'title' => __('Widgets padding', THEME_DOMAIN),
+                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
+                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+                    'default' => [
+                        'sameall' => '1',
+                        'padding-top' => '20px',
+                        'padding-right' => '20px',
+                        'padding-bottom' => '20px',
+                        'padding-left' => '20px',
+                        'units' => 'px',
+                    ],
+                    'select2' => ['allowClear' => false],
+                    'required' => ['footer_layout_rows', '>', '1']
+                ],
+                [
+                    'id'     => 'footer_layout_section-rows-2-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                    'required' => ['footer_layout_rows', '>', '1']
+                ],
+                
+                /*** ROW 3 ***/
+                [
+                    'id' => 'footer_layout_section-rows-3-start',
+                    'type' => 'section',
+                    'title' => __('Row 3', THEME_DOMAIN),
+                    'indent' => true ,
+                    'required' => ['footer_layout_rows', '>', '2']
+                ],
+                [
                     'id' => 'footer_layout_rows-3-columns',
                     'type' => 'select',
                     'title' => __('Row 3 columns', THEME_DOMAIN),
@@ -119,12 +214,12 @@ class Layout implements ISection {
                     'required' => ['footer_layout_rows', '>', '2']
                 ],
                 [
-                    'id' => 'footer_layout_padding',
+                    'id' => 'footer_layout_row-3-widgets-padding',
                     'type' => 'them_spacing',
                     'mode' => 'padding',
-                    'units' => ['px'],
+                    'units' => ['px', 'em'],
                     'units_extended' => true,
-                    'title' => __('Footer padding', THEME_DOMAIN),
+                    'title' => __('Widgets padding', THEME_DOMAIN),
                     'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
                     'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
                     'default' => [
@@ -136,26 +231,15 @@ class Layout implements ISection {
                         'units' => 'px',
                     ],
                     'select2' => ['allowClear' => false],
+                    'required' => ['footer_layout_rows', '>', '2']
                 ],
                 [
-                    'id' => 'footer_layout_padding-widgets',
-                    'type' => 'them_spacing',
-                    'mode' => 'padding',
-                    'units' => ['px'],
-                    'units_extended' => true,
-                    'title' => __('Footer widgets padding', THEME_DOMAIN),
-                    'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
-                    'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
-                    'default' => [
-                        'sameall' => '1',
-                        'padding-top' => '20px',
-                        'padding-right' => '20px',
-                        'padding-bottom' => '20px',
-                        'padding-left' => '20px',
-                        'units' => 'px',
-                    ],
-                    'select2' => ['allowClear' => false],
+                    'id'     => 'footer_layout_section-rows-3-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                    'required' => ['footer_layout_rows', '>', '2']
                 ],
+                
                 [
                     'id' => 'footer_layout_rows-1-preview',
                     'type' => 'raw',
