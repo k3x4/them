@@ -21,19 +21,14 @@ class Layout implements ICSS{
     
     private function generalCSS(){
         $footer = new Footer\Main\Layout;
-        $padding = $footer->getPadding();
-        $paddingWidgets = $footer->getPaddingWidgets();
         
-        $padding = Helpers\Converter::spacingToCSS($padding, 'padding');
-        $paddingWidgets = Helpers\Converter::spacingToCSS($paddingWidgets, 'padding');
+        $wrapperPadding = $footer->getWrapperPadding();
+        $wrapperPadding = Helpers\Converter::spacingToCSS($wrapperPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
             '.footer.container, .footer.container-fluid' => [
-                'padding' => $padding
-            ],
-            '.footer.container .widget-area, .footer.container-fluid .widget-area' => [
-                'padding' => $paddingWidgets,
+                'padding' => $wrapperPadding
             ]
         ];
         return $cssBlocks;

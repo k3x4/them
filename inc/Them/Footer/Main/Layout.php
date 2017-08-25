@@ -39,7 +39,6 @@ class Layout extends Options {
     
     public function getContainerClass() {
         $classes = 'footer ';
-        $classes .= $this->getRowsTemplate() . ' ';
 
         $options = Helpers\OverrideOptions::get(__CLASS__, THEM_CLASS_GENERAL, 'container-general');
         if ($options['container-type'] == CONTAINER_FIXED) {
@@ -95,7 +94,7 @@ class Layout extends Options {
             $widgetClass = $bootstrap->getColumnsClass($colWidth);
             $widget = [
                 'ID' => $widgetID,
-                'class' => $class . ' ' . $widgetClass
+                'class' => $class . ' ' . 'row-' . $row . ' '. $widgetClass
             ];
             $widgets[] = $widget;
         }

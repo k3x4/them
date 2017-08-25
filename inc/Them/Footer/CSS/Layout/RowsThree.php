@@ -6,20 +6,26 @@ use Them\Footer;
 use Them\Helpers;
 use Them\ICSS;
 
-class RowsOne implements ICSS{
+class RowsThree implements ICSS{
     
     public function getCSS() {
         $footer = new Footer\Main\Layout;
+        $firstRow = new RowsOne;
+        $secondRow = new RowsTwo;
+        
         $widgetsPadding = $footer->getWidgetsPadding(FOOTER_ROW_3);
         $widgetsPadding = Helpers\Converter::spacingToCSS($widgetsPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
-            '.footer.container.rows-3 .widget-area' => [
+            '.footer.container .widget-area.row-3' => [
                 'padding' => $widgetsPadding
             ]
         ];
-        return $cssBlocks;
+        
+        $firstRowPadding = $firstRow->getCSS();
+        $secondRowPadding = $secondRow->getCSS();
+        return array_merge($cssBlocks, $firstRowPadding, $secondRowPadding);
     }
 
     public function getCSSMedia() {

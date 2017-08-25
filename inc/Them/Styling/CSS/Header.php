@@ -11,6 +11,7 @@ class Header implements ICSS {
         $header = new Styling\Main\Header;
         
         $headerBackgroundColor = $header->getHeaderBackgroundColor();
+        $containerBackgroundColor = $header->getContainerBackgroundColor();
         $menuBackgroundColor = $header->getMenuBackgroundColor();
         
         $menuItemsColor = $header->getMenuItemsTextColor();
@@ -27,6 +28,10 @@ class Header implements ICSS {
         $cssBlocks[] = [
             '.site-header' => [
                 'background-color' => $headerBackgroundColor
+            ],
+            '.site-header .header.container, ' .
+            '.site-header .header.container-fluid' => [
+                'background-color' => $containerBackgroundColor
             ],
             '.main-navigation .nav-menu' => [
                 'background-color' => $menuBackgroundColor

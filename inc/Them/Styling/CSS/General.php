@@ -20,7 +20,7 @@ class General implements ICSS {
             'html, body' => [
                 'color' => $bodyColor
             ],
-            'a, a:visited' => [
+            'a, a:link, a:visited' => [
                 'color' => $linkColor
             ],
             'a:hover, a:focus' => [

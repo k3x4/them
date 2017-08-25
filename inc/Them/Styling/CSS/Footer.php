@@ -9,15 +9,71 @@ class Footer implements ICSS {
      
     public function getCSS() {
         $footer = new Styling\Main\Footer;
+        $general = new Styling\Main\General;
         
-        $backgroundColor = $footer->getBackgroundColor();
+        $footerBackgroundColor = $footer->getFooterBackgroundColor();
+        $containerBackgroundColor = $footer->getContainerBackgroundColor();
+        $widgetsBackgroundColor = $footer->getWidgetsBackgroundColor();
+        
+        $widgetsTextColor = $footer->getWidgetsTextColor();
+        
+        $widgetsLinksColor = $footer->getWidgetsLinksTextColor();
+        $widgetsLinksHoverColor = $footer->getWidgetsLinksTextHoverColor();
+        
+        $generalLinkHoverColor = $general->getLinkHoverColor();
         
         $cssBlocks = [];
         $cssBlocks[] = [
-            '.footer.container, .footer.container-fluid' => [
-                'background-color' => $backgroundColor
+            '.site-footer' => [
+                'background-color' => $footerBackgroundColor
+            ],
+            '.site-footer .footer.container, ' .
+            '.site-footer .footer.container-fluid' => [
+                'background-color' => $containerBackgroundColor
+            ],
+            '.site-footer .footer.container .widget-area, ' .
+            '.site-footer .footer.container-fluid .widget-area' => [
+                'color' => $widgetsTextColor,
+                'background-color' => $widgetsBackgroundColor
             ]
         ];
+        
+        if($footer->widgetsLinksTextColorOverride()):
+            
+            $cssBlocks[] = [
+                '.site-footer .footer.container .widget-area a, ' .
+                '.site-footer .footer.container .widget-area a:visited, ' .
+                '.site-footer .footer.container-fluid .widget-area a, ' .
+                '.site-footer .footer.container-fluid .widget-area a:visited' => [
+                    'color' => $widgetsLinksColor,
+                ]
+            ];
+        
+            if($footer->widgetsLinksTextColorHoverChange()):
+                
+                $cssBlocks[] = [
+                    '.site-footer .footer.container .widget-area a:hover, ' .
+                    '.site-footer .footer.container .widget-area a:focus, ' .
+                    '.site-footer .footer.container-fluid .widget-area a:hover, ' .
+                    '.site-footer .footer.container-fluid .widget-area a:focus' => [
+                        'color' => $widgetsLinksHoverColor,
+                    ]
+                ];
+                
+            else:
+                
+                $cssBlocks[] = [
+                    '.site-footer .footer.container .widget-area a:hover, ' .
+                    '.site-footer .footer.container .widget-area a:focus, ' .
+                    '.site-footer .footer.container-fluid .widget-area a:hover, ' .
+                    '.site-footer .footer.container-fluid .widget-area a:focus' => [
+                        'color' => $generalLinkHoverColor,
+                    ]
+                ];
+                
+            endif;
+            
+        endif;
         
         return $cssBlocks;
     }

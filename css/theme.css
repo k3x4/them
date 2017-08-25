@@ -65,20 +65,27 @@ html {
 .content.container{padding:30px 0 50px 0;}
 .logo-col{padding:20px;}
 html, body{color:#585858;}
-a, a:visited{color:#336699;}
+a, a:link, a:visited{color:#336699;}
 a:hover, a:focus{color:#3366CC;}
 body #page{background-color:rgba(243,243,243,1);}
 .site-header{background-color:transparent;}
+.site-header .header.container, .site-header .header.container-fluid{background-color:rgba(0,0,0,0.4);}
 .main-navigation .nav-menu{background-color:transparent;padding:0;display:block;}
 .main-navigation .nav-menu li a, .main-navigation .nav-menu li a:visited{color:#222222;background-color:transparent;}
 .main-navigation .nav-menu .sub-menu li a, .main-navigation .nav-menu .sub-menu li a:visited{color:#222222;background-color:rgba(255,255,255,1);}
 .content.container, .content.container-fluid{background-color:transparent;}
 .content.container .content-area-wrapper #main, .content.container-fluid .content-area-wrapper #main, .content.container .widget-area, .content.container-fluid .widget-area{background-color:rgba(255,255,255,1);}
-.footer.container, .footer.container-fluid{background-color:rgba(34,34,34,1);padding:20px;}
+.site-footer{background-color:rgba(183,183,183,1);}
+.site-footer .footer.container, .site-footer .footer.container-fluid{background-color:rgba(243,243,243,1);}
+.site-footer .footer.container .widget-area, .site-footer .footer.container-fluid .widget-area{color:#dd9933;background-color:rgba(102,102,102,1);}
+.site-footer .footer.container .widget-area a, .site-footer .footer.container .widget-area a:visited, .site-footer .footer.container-fluid .widget-area a, .site-footer .footer.container-fluid .widget-area a:visited{color:#222222;}
+.site-footer .footer.container .widget-area a:hover, .site-footer .footer.container .widget-area a:focus, .site-footer .footer.container-fluid .widget-area a:hover, .site-footer .footer.container-fluid .widget-area a:focus{color:#3bef5c;}
 .header.container{padding:0;}
 them-h1l .main-navigation{float:right;}
 .main-navigation .nav-menu li a{padding:15px 20px 15px 20px;display:block;}
-.footer.container .widget-area, .footer.container-fluid .widget-area{padding:20px;}
+.footer.container, .footer.container-fluid{padding:0 15px 0 15px;}
+.footer.container .widget-area.row-2{padding:15px;}
+.footer.container .widget-area.row-1{padding:20px;}
 .content.container .content-area-wrapper #main > *, .content.container-fluid .content-area-wrapper #main > *, .content.container .widget-area > *, .content.container-fluid .widget-area > *{overflow:hidden;}
 .content.container .widget-area-wrapper, .content.container-fluid .widget-area-wrapper{padding:0 15px 0 15px;}
 .content.container .widget-area, .content.container-fluid .widget-area{padding:20px;}

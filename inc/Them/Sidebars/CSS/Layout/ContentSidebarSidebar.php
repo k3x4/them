@@ -44,8 +44,8 @@ class ContentSidebarSidebar implements ICSS{
             ]
         ];
  
-        $contentMargin = $content->getCSS();
-        return array_merge($cssBlocks, $contentMargin);
+        $contentPadding = $content->getCSS();
+        return array_merge($cssBlocks, $contentPadding);
     }
 
     public function getCSSMedia() {

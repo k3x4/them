@@ -15,7 +15,7 @@ class RowsOne implements ICSS{
         
         $cssBlocks = [];
         $cssBlocks[] = [
-            '.footer.container.rows-1 .widget-area' => [
+            '.footer.container .widget-area.row-1' => [
                 'padding' => $widgetsPadding
             ]
         ];

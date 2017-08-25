@@ -60,6 +60,51 @@ class Header implements ISection {
                     'indent' => false,
                 ],
                 [
+                    'id' => 'styling_header_section-container-start',
+                    'type' => 'section',
+                    'title' => __('Container', THEME_DOMAIN),
+                    'indent' => true 
+                ],
+                [
+                    'id' => 'styling_header_background-container-color',
+                    'type' => 'color_rgba',
+                    'title' => 'Container Background Color',
+                    'subtitle' => 'Set color and alpha channel',
+                    'desc' => 'The caption of this button may be changed to whatever you like!',
+                    'default' => [
+                        'alpha' => 1
+                    ],
+                    'options' => [
+                        'show_input' => true,
+                        'show_initial' => true,
+                        'show_alpha' => true,
+                        'show_palette' => true,
+                        'show_palette_only' => false,
+                        'show_selection_palette' => true,
+                        'max_palette_size' => 10,
+                        'allow_empty' => true,
+                        'clickout_fires_change' => false,
+                        'choose_text' => 'Choose',
+                        'cancel_text' => 'Cancel',
+                        'show_buttons' => true,
+                        'use_extended_classes' => true,
+                        'palette' => null, // show default
+                        'input_text' => 'Select Color'
+                    ],
+                ],
+                [
+                    'id' => 'styling_header_background-container-image',
+                    'type' => 'media',
+                    'title' => __('Container Background Image', THEME_DOMAIN),
+                    'compiler' => 'true',
+                    'subtitle' => __('Background Image For Main Content Area.++', THEME_DOMAIN),
+                ],
+                [
+                    'id'     => 'styling_header_section-container-end',
+                    'type'   => 'section',
+                    'indent' => false,
+                ],
+                [
                     'id' => 'styling_header_section-menu-start',
                     'type' => 'section',
                     'title' => __('Menu', THEME_DOMAIN),

@@ -11,6 +11,10 @@ class Header extends Options {
         return Helpers\Converter::RGBAToColor($this->options['background-header-color']);
     }
     
+    public function getContainerBackgroundColor(){
+        return Helpers\Converter::RGBAToColor($this->options['background-container-color']);
+    }
+    
     public function getMenuBackgroundColor(){
         return Helpers\Converter::RGBAToColor($this->options['background-menu-color']);
     }
