@@ -26,14 +26,20 @@ class Vertical implements ICSS {
 
     private function generalCSS(){
         $header = new Header\Main\Layout;
-        $padding = $header->getPadding();
         
-        $padding = Helpers\Converter::spacingToCSS($padding, 'padding');
+        $wrapperPadding = $header->getWrapperPadding();
+        $wrapperPadding = Helpers\Converter::spacingToCSS($wrapperPadding, 'padding');
+        
+        $mainPadding = $header->getWrapperPadding();
+        $mainPadding = Helpers\Converter::spacingToCSS($mainPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
+            '.header-wrapper.container' => [
+                'padding' => $wrapperPadding
+            ],
             '.header.container' => [
-                'padding' => $padding
+                'padding' => $mainPadding
             ]
         ];
         return $cssBlocks;

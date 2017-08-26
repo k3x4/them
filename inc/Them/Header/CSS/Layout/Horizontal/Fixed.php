@@ -10,14 +10,20 @@ class Fixed extends Header\Main\Layout implements ICSS{
     
     public function getCSS() {
         $header = new Header\Main\Layout;
-        $padding = $header->getPadding();
         
-        $padding = Helpers\Converter::spacingToCSS($padding, 'padding');
+        $wrapperPadding = $header->getWrapperPadding();
+        $wrapperPadding = Helpers\Converter::spacingToCSS($wrapperPadding, 'padding');
+        
+        $mainPadding = $header->getWrapperPadding();
+        $mainPadding = Helpers\Converter::spacingToCSS($mainPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
+            '.header-wrapper.container' => [
+                'padding' => $wrapperPadding
+            ],
             '.header.container' => [
-                'padding' => $padding
+                'padding' => $mainPadding
             ]
         ];
         return $cssBlocks;
@@ -27,7 +33,7 @@ class Fixed extends Header\Main\Layout implements ICSS{
         $CSS = new Helpers\CSS;
         
         $queries = [];
-        $tag = '.header.container';
+        $tag = '.header-wrapper.container';
 
         if($this->containerSize > BOOTSTRAP_LARGE_BREAKPOINT){
             $queries = $CSS->makeMediaCSS(new Helpers\Media\LargeMediaCSS, $tag, $this->containerSize);

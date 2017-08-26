@@ -29,8 +29,7 @@ class Header implements ICSS {
             '.site-header' => [
                 'background-color' => $headerBackgroundColor
             ],
-            '.site-header .header.container, ' .
-            '.site-header .header.container-fluid' => [
+            '.site-header .header' => [
                 'background-color' => $containerBackgroundColor
             ],
             '.main-navigation .nav-menu' => [

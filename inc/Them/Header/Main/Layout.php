@@ -35,8 +35,12 @@ class Layout extends Options {
         return $this->options[$layout];
     }
     
-    public function getPadding(){
-        return $this->options['padding'];
+    public function getWrapperPadding(){
+        return $this->options['wrapper-padding'];
+    }
+    
+    public function getMainPadding(){
+        return $this->options['main-padding'];
     }
     
     public function getWidth(){
@@ -113,7 +117,7 @@ class Layout extends Options {
     }
 
     public function getContainerClass() {
-        $classes = 'header ';
+        $classes = '';
 
         $options = Helpers\OverrideOptions::get(__CLASS__, THEM_CLASS_GENERAL, 'container-general');
         if ($options['container-type'] == CONTAINER_FIXED) {

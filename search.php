@@ -11,15 +11,11 @@ get_header();
 
 <div class="wrapper" id="wrapper-index">
 
-    <?php $general = new them_general; ?>
-    <?php $container_class = $general->get_container_class(); ?>
-    <div class="<?php echo $container_class; ?>" id="content" tabindex="-1">
+    <div class="<?php echo themClass('general_layout')->getContainerClass(); ?>" id="content" tabindex="-1">
 
         <div class="row">
 
-            <?php $general = new them_general; ?>
-            <?php $content_classes = $general->get_content_classes(); ?>
-            <div class="<?php echo $content_classes; ?>" id="primary">
+            <div class="<?php echo themClass('general_layout')->getContentClasses(); ?>" id="primary">
                 <main id="main" class="site-main">
 
                     <?php if (have_posts()) : ?>

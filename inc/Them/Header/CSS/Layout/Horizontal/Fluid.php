@@ -10,15 +10,21 @@ class Fluid extends Header\Main\Layout implements ICSS{
     
     public function getCSS() {
         $header = new Header\Main\Layout;
-        $padding = $header->getPadding();
         
-        $padding = Helpers\Converter::spacingToCSS($padding, 'padding');
+        $wrapperPadding = $header->getWrapperPadding();
+        $wrapperPadding = Helpers\Converter::spacingToCSS($wrapperPadding, 'padding');
+        
+        $mainPadding = $header->getWrapperPadding();
+        $mainPadding = Helpers\Converter::spacingToCSS($mainPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
-            '.header.container-fluid' => [
+            '.header-wrapper.container-fluid' => [
                 'width' => $this->containerSize . '%',
-                'padding' => $padding
+                'padding' => $wrapperPadding
+            ],
+            '.header.container-fluid' => [
+                'padding' => $mainPadding
             ]
         ];
         return $cssBlocks;

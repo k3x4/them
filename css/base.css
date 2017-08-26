@@ -6,7 +6,7 @@ html {
     float: right;
 }
 
-.header.container .menu-col{
+.header-wrapper.container .menu-col{
     padding: 0;
 }
 

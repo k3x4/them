@@ -14,6 +14,8 @@ class Footer implements ISection {
             'id' => 'styling_footer',
             'subsection' => true,
             'fields' => [
+                
+                /*** BACKGROUND ***/
                 [
                     'id' => 'styling_footer_section-background-start',
                     'type' => 'section',
@@ -27,6 +29,7 @@ class Footer implements ISection {
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
                     'default' => [
+                        'color' => '#434343',
                         'alpha' => 1
                     ],
                     'options' => [
@@ -58,6 +61,8 @@ class Footer implements ISection {
                     'type'   => 'section',
                     'indent' => false,
                 ],
+                
+                /*** CONTAINER ***/
                 [
                     'id' => 'styling_footer_section-container-start',
                     'type' => 'section',
@@ -103,6 +108,8 @@ class Footer implements ISection {
                     'type'   => 'section',
                     'indent' => false,
                 ],
+                
+                /*** WIDGETS ***/
                 [
                     'id' => 'styling_footer_section-widgets-start',
                     'type' => 'section',
@@ -149,7 +156,7 @@ class Footer implements ISection {
                     'transparent' => false,
                     'title' => __('Text color', THEME_DOMAIN),
                     'subtitle' => __('Pick a main color for the theme (default: #000).++', THEME_DOMAIN),
-                    'default' => '#222222',
+                    'default' => '#aaaaaa',
                 ],
                 [
                     'id' => 'styling_footer_widgets-links-text-override-color-enable',

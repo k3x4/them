@@ -21,7 +21,6 @@ class Content implements ISection {
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
                     'default' => [
-                        //'color' => '#FFFFFF',
                         'alpha' => 1
                     ],
                     'options' => [
@@ -56,7 +55,7 @@ class Content implements ISection {
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
                     'default' => [
-                        //'color' => '#FFFFFF',
+                        'color' => '#FFFFFF',
                         'alpha' => 1
                     ],
                     'options' => [

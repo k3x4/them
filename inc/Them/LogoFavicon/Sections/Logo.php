@@ -52,11 +52,11 @@ class Logo implements ISection {
                     'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
                     'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
                     'default' => [
-                        'sameall' => '1',
+                        'sameall' => '0',
                         'padding-top' => '20px',
-                        'padding-right' => '20px',
+                        'padding-right' => '15px',
                         'padding-bottom' => '20px',
-                        'padding-left' => '20px',
+                        'padding-left' => '15px',
                         'units' => 'px'
                     ],
                     'select2' => ['allowClear' => false]
