@@ -7,6 +7,15 @@ use Them\Helpers;
 
 class Header extends Options {
     
+    public function getHeaderBackground() {
+        return Helpers\Converter::Background(
+                $this->options['background-header-type'],
+                $this->options['background-header-color'],
+                $this->options['background-header-pattern'],
+                $this->options['background-header-image']
+        );
+    }
+
     public function getHeaderBackgroundColor(){
         return Helpers\Converter::RGBAToColor($this->options['background-header-color']);
     }

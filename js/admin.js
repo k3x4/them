@@ -267,6 +267,12 @@ jQuery(document).ready(function ($) {
         $(this).removeClass('hide');
     });
     
+    /* REDUX THEM TILES DISABLE QTIP */
+    
+    $('.tiles').each(function(){
+         $(this).removeData("hasqtip");
+    });
+    
     /*$('.redux-container-media .hide .redux-option-image').each(function () {
         var id = $( this ).parents( '.redux-container-media:first' ).find( '.upload-id' );
         $(id).change(function(){

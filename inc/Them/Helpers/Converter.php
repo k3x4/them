@@ -60,4 +60,53 @@ class Converter {
         return 'transparent';
     }
     
+    public static function BackgroundPattern($pattern){
+        return 'url("' . $pattern . '") 0 0 repeat';
+    }
+    
+    public static function BackgroundImage($image){
+        $defaults = [
+            'background-color'      => 'transparent',
+            'background-image'      => '',
+            'background-position'   => '',
+            'background-size'       => '',
+            'background-repeat'     => '',
+            'background-attachment' => ''
+        ];
+        
+        $imageExtras = array_diff_key($image, $defaults);
+        $image = array_diff_key($image, $imageExtras);
+        
+        $image = array_filter($image);
+        $args = wp_parse_args($image, $defaults);
+        $args = array_filter($args);
+        
+        if(isset($args['background-image']) && $args['background-image']){
+            $args['background-image'] = 'url("' . $args['background-image'] . '")';
+        }
+        
+        if(isset($args['background-position']) && $args['background-position']){
+            if(isset($args['background-size']) && $args['background-size']){
+                $args['background-position'] = $args['background-position'] . '/' . $args['background-size'];
+                unset($args['background-size']);
+            }
+        }
+
+        return implode(' ', $args);
+    }
+    
+    public static function Background($type, $color, $pattern, $image){
+        switch($type){
+            case 'color':
+                return self::RGBAToColor($color);
+                break;
+            case 'pattern':
+                return self::BackgroundPattern($pattern);
+                break;
+            case 'image':
+                return self::BackgroundImage($image);
+                break;
+        }
+    }
+    
 }

@@ -12,6 +12,17 @@ input.disabled, input:disabled, select.disabled, select:disabled, textarea.disab
 .arrow-enabled{
     color: #333;
 }
+
+.them_patterns .redux-container-image_select .redux-image-select .tiles{
+    width: 80px;
+    height: 80px;
+}
+
+.them_patterns .redux-container-image_select ul.redux-image-select li{
+    padding-right:15px;
+    padding-bottom:10px;
+}
+
 /* SIDEBARS */
 
 .redux-container .form-table .sidebars_preview{

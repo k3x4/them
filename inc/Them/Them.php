@@ -9,6 +9,7 @@ class Them {
     
     public function setupMenu(){
         $this->sections = [];
+        $this->addPreviews();
         $this->addSections();
         $this->makeSections();
     }
@@ -22,6 +23,37 @@ class Them {
         add_action('redux/options/' . THEME_DOMAIN . '/reset', [$this, 'saveStylesheetFile']);
     }
     
+    private function addPreviews(){
+        $this->addPatternPreviews();
+    }
+    
+    private function addPatternPreviews() {
+        $registry = Helpers\Registry::getInstance();
+        $registry['patterns'] = [
+            '01' => ['img' => THEME_URL . '/inc/preview/patterns/01.png'],
+            '02' => ['img' => THEME_URL . '/inc/preview/patterns/02.png'],
+            '03' => ['img' => THEME_URL . '/inc/preview/patterns/03.png'],
+            '04' => ['img' => THEME_URL . '/inc/preview/patterns/04.png'],
+            '05' => ['img' => THEME_URL . '/inc/preview/patterns/05.png'],
+            '06' => ['img' => THEME_URL . '/inc/preview/patterns/06.png'],
+            '07' => ['img' => THEME_URL . '/inc/preview/patterns/07.png'],
+            '08' => ['img' => THEME_URL . '/inc/preview/patterns/08.png'],
+            '09' => ['img' => THEME_URL . '/inc/preview/patterns/09.png'],
+            '10' => ['img' => THEME_URL . '/inc/preview/patterns/10.png'],
+            '11' => ['img' => THEME_URL . '/inc/preview/patterns/11.png'],
+            '12' => ['img' => THEME_URL . '/inc/preview/patterns/12.png'],
+            '13' => ['img' => THEME_URL . '/inc/preview/patterns/13.png'],
+            '14' => ['img' => THEME_URL . '/inc/preview/patterns/14.png'],
+            '15' => ['img' => THEME_URL . '/inc/preview/patterns/15.png'],
+            '16' => ['img' => THEME_URL . '/inc/preview/patterns/16.png'],
+            '17' => ['img' => THEME_URL . '/inc/preview/patterns/17.png'],
+            '18' => ['img' => THEME_URL . '/inc/preview/patterns/18.png'],
+            '19' => ['img' => THEME_URL . '/inc/preview/patterns/19.png'],
+            '20' => ['img' => THEME_URL . '/inc/preview/patterns/20.png'],
+            '21' => ['img' => THEME_URL . '/inc/preview/patterns/21.png'],
+        ];
+    }
+
     private function addSections(){
         $this->addSection(new General\Sections);
         $this->addSection(new General\Sections\Layout);
