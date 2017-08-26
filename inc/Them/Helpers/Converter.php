@@ -95,7 +95,14 @@ class Converter {
         return implode(' ', $args);
     }
     
-    public static function Background($type, $color, $pattern, $image){
+    public static function Background($className, $setting){
+        $options = Registry::getOptions($className);
+
+        $type       = $options[ $setting . '-' . 'type' ];
+        $color      = $options[ $setting . '-' . 'color' ];
+        $pattern    = $options[ $setting . '-' . 'pattern' ];
+        $image      = $options[ $setting . '-' . 'image' ];
+        
         switch($type){
             case 'color':
                 return self::RGBAToColor($color);

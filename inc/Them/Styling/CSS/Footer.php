@@ -11,9 +11,9 @@ class Footer implements ICSS {
         $footer = new Styling\Main\Footer;
         $general = new Styling\Main\General;
         
-        $footerBackgroundColor = $footer->getFooterBackgroundColor();
-        $containerBackgroundColor = $footer->getContainerBackgroundColor();
-        $widgetsBackgroundColor = $footer->getWidgetsBackgroundColor();
+        $footerBackground = $footer->getFooterBackground();
+        $containerBackground = $footer->getContainerBackground();
+        $widgetsBackground = $footer->getWidgetsBackground();
         
         $widgetsTextColor = $footer->getWidgetsTextColor();
         
@@ -25,16 +25,16 @@ class Footer implements ICSS {
         $cssBlocks = [];
         $cssBlocks[] = [
             '.site-footer' => [
-                'background-color' => $footerBackgroundColor
+                'background' => $footerBackground
             ],
             '.site-footer .footer.container, ' .
             '.site-footer .footer.container-fluid' => [
-                'background-color' => $containerBackgroundColor
+                'background' => $containerBackground
             ],
             '.site-footer .footer.container .widget-area, ' .
             '.site-footer .footer.container-fluid .widget-area' => [
                 'color' => $widgetsTextColor,
-                'background-color' => $widgetsBackgroundColor
+                'background' => $widgetsBackground
             ]
         ];
         

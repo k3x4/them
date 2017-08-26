@@ -19,12 +19,8 @@ class General extends Options {
         return $this->options['link-hover-color'];
     }
     
-    public function getBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['page-background-color']);
-    }
-    
-    public function getBackgroundImage(){
-        return $this->options['page-background-image'];
+    public function getPageBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-page');
     }
 
 }

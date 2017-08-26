@@ -10,11 +10,9 @@ class Header implements ICSS {
     public function getCSS() {
         $header = new Styling\Main\Header;
         
-        $r = $header->getHeaderBackground();
-        
-        $headerBackgroundColor = $header->getHeaderBackgroundColor();
-        $containerBackgroundColor = $header->getContainerBackgroundColor();
-        $menuBackgroundColor = $header->getMenuBackgroundColor();
+        $headerBackground = $header->getHeaderBackground();
+        $containerBackground = $header->getContainerBackground();
+        $menuBackground = $header->getMenuBackground();
         
         $menuItemsColor = $header->getMenuItemsTextColor();
         $menuItemsHoverColor = $header->getMenuItemsTextHoverColor();
@@ -29,13 +27,13 @@ class Header implements ICSS {
         $cssBlocks = [];
         $cssBlocks[] = [
             '.site-header' => [
-                'background' => $r
+                'background' => $headerBackground
             ],
             '.site-header .header' => [
-                'background-color' => $containerBackgroundColor
+                'background' => $containerBackground
             ],
             '.main-navigation .nav-menu' => [
-                'background-color' => $menuBackgroundColor
+                'background' => $menuBackground
             ],
             '.main-navigation .nav-menu li a, ' .
             '.main-navigation .nav-menu li a:visited' => [

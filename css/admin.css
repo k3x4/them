@@ -22,6 +22,9 @@ input.disabled, input:disabled, select.disabled, select:disabled, textarea.disab
     padding-right:15px;
     padding-bottom:10px;
 }
+.redux-container .redux-main .them_button_set td fieldset.redux-field-container{
+    padding-top: 0;
+}
 
 /* SIDEBARS */
 

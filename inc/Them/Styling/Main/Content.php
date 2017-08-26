@@ -7,12 +7,12 @@ use Them\Helpers;
 
 class Content extends Options {
     
-    public function getWrapperBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['wrapper-background-color']);
+    public function getWrapperBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-wrapper');
     }
     
-    public function getBlocksBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['blocks-background-color']);
+    public function getBlocksBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-blocks');
     }
 
 }

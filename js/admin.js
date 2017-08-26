@@ -267,6 +267,11 @@ jQuery(document).ready(function ($) {
         $(this).removeClass('hide');
     });
     
+    /* REDUX BUTTON SET REMOVE BORDER */
+    
+    var $btn_set = $('.redux-container-button_set').parent().parent();
+    $btn_set.css('border-bottom', 'none');
+    
     /* REDUX THEM TILES DISABLE QTIP */
     
     $('.tiles').each(function(){

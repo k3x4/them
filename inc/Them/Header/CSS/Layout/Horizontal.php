@@ -27,14 +27,14 @@ class Horizontal implements ICSS {
         
         if($header->customHeightEnable()):
         $cssBlocks[] = [
-            '.header-wrapper.container' => [
+            '.header' => [
                 'height' => $height
             ],
-            '.header-wrapper.container .row' => [
+            '.header .row' => [
                 'height' => '100%',
                 'position' => 'relative'
             ],
-            '.header-wrapper.container .row:before' => [
+            '.header .row:before' => [
                 'content' => '" "',
                 'display' => 'inline-block',
                 'height' => '100%',
@@ -42,7 +42,7 @@ class Horizontal implements ICSS {
                 'margin-left' => '-5px',
                 'vertical-align' => 'middle'
             ],
-            '.header-wrapper.container .row .logo-col' => [
+            '.header .row .logo-col' => [
                 'display' => 'inline-block',
                 'vertical-align' => $logoVerticalAlign
             ],

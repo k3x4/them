@@ -7,16 +7,16 @@ use Them\Helpers;
 
 class Footer extends Options {
     
-    public function getFooterBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['background-footer-color']);
+    public function getFooterBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-footer');
     }
     
-    public function getContainerBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['background-container-color']);
+    public function getContainerBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-container');
     }
     
-    public function getWidgetsBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['background-widgets-color']);
+    public function getWidgetsBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-widgets');
     }
     
     public function getWidgetsTextColor(){

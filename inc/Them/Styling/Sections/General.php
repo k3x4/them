@@ -3,10 +3,14 @@
 namespace Them\Styling\Sections;
 
 use Them\ISection;
+use Them\Helpers;
 
 class General implements ISection {
 
     public static function addSection() {
+        
+        $registry = Helpers\Registry::getInstance();
+        $patterns = $registry['patterns'];
 
         \Redux::setSection(THEME_DOMAIN, [
             'title' => __('General', THEME_DOMAIN),
@@ -55,14 +59,25 @@ class General implements ISection {
                     'default' => '#3366CC',
                 ],
                 [
-                    'id' => 'styling_general_page-background-color',
+                    'id'       => 'styling_general_background-page-type',
+                    'type'     => 'button_set',
+                    'title'    => __('Background type', THEME_DOMAIN),
+                    'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
+                    'options' => [
+                        'color' => 'Color', 
+                        'pattern' => 'Pattern', 
+                        'image' => 'Custom Image'
+                    ], 
+                    'default' => 'color'
+                ],
+                [
+                    'id' => 'styling_general_background-page-color',
                     'type' => 'color_rgba',
-                    'title' => 'Page Background Color',
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
+                    'class' => 'them_button_set',
                     'default' => [
-                        'color' => '#f3f3f3',
-                        'alpha' => '1'
+                        'alpha' => 1
                     ],
                     'options' => [
                         'show_input' => true,
@@ -78,17 +93,28 @@ class General implements ISection {
                         'cancel_text' => 'Cancel',
                         'show_buttons' => true,
                         'use_extended_classes' => true,
-                        'palette' => null, 
+                        'palette' => null, // show default
                         'input_text' => 'Select Color'
                     ],
+                    'required' => ['styling_general_background-page-type', '=', 'color']
                 ],
                 [
-                    'id' => 'styling_general_page-background-image',
-                    'type' => 'media',
-                    'title' => __('Page Background Image', THEME_DOMAIN),
-                    'compiler' => 'true',
-                    'subtitle' => __('Background Image For Main Content Area.++', THEME_DOMAIN),
-                ]
+                    'id' => 'styling_general_background-page-pattern',
+                    'type' => 'image_select',
+                    'class' => 'them_patterns them_button_set',
+                    'tiles' => true,
+                    'options' => $patterns,
+                    'default' => '01',
+                    'required' => ['styling_general_background-page-type', '=', 'pattern']
+                ],
+                [
+                    'id'       => 'styling_general_background-page-image',
+                    'type'     => 'background',
+                    'subtitle' => __('Body background with image, color, etc.', THEME_DOMAIN),
+                    'class' => 'them_button_set',
+                    'desc'     => __('This is the description field, again good for additional info.', THEME_DOMAIN),
+                    'required' => ['styling_general_background-page-type', '=', 'image']
+                ],
             ]
         ]);
         

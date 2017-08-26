@@ -8,24 +8,15 @@ use Them\Helpers;
 class Header extends Options {
     
     public function getHeaderBackground() {
-        return Helpers\Converter::Background(
-                $this->options['background-header-type'],
-                $this->options['background-header-color'],
-                $this->options['background-header-pattern'],
-                $this->options['background-header-image']
-        );
-    }
-
-    public function getHeaderBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['background-header-color']);
+        return Helpers\Converter::Background(__CLASS__, 'background-header');
     }
     
-    public function getContainerBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['background-container-color']);
+    public function getContainerBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-container');
     }
     
-    public function getMenuBackgroundColor(){
-        return Helpers\Converter::RGBAToColor($this->options['background-menu-color']);
+    public function getMenuBackground(){
+        return Helpers\Converter::Background(__CLASS__, 'background-menu');
     }
     
     public function getMenuItemsTextColor(){

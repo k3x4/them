@@ -10,19 +10,19 @@ class Content implements ICSS {
     public function getCSS() {
         $content = new Styling\Main\Content;
         
-        $wrapperBackgroundColor = $content->getWrapperBackgroundColor();
-        $blocksBackgroundColor = $content->getBlocksBackgroundColor();
+        $wrapperBackground = $content->getWrapperBackground();
+        $blocksBackground = $content->getBlocksBackground();
         
         $cssBlocks = [];
         $cssBlocks[] = [
             '.content.container, .content.container-fluid' => [
-                'background-color' => $wrapperBackgroundColor
+                'background' => $wrapperBackground
             ],
             '.content.container .content-area-wrapper #main, ' .
             '.content.container-fluid .content-area-wrapper #main, ' .
             '.content.container .widget-area, ' .
             '.content.container-fluid .widget-area' => [
-                'background-color' => $blocksBackgroundColor
+                'background' => $blocksBackground
             ]
         ];
         

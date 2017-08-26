@@ -3,10 +3,14 @@
 namespace Them\Styling\Sections;
 
 use Them\ISection;
+use Them\Helpers;
 
 class Content implements ISection {
 
     public static function addSection() {
+        
+        $registry = Helpers\Registry::getInstance();
+        $patterns = $registry['patterns'];
 
         \Redux::setSection(THEME_DOMAIN, [
             'title' => __('Content', THEME_DOMAIN),
@@ -15,11 +19,23 @@ class Content implements ISection {
             'subsection' => true,
             'fields' => [
                 [
-                    'id' => 'styling_content_wrapper-background-color',
+                    'id'       => 'styling_content_background-wrapper-type',
+                    'type'     => 'button_set',
+                    'title'    => __('Background type', THEME_DOMAIN),
+                    'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
+                    'options' => [
+                        'color' => 'Color', 
+                        'pattern' => 'Pattern', 
+                        'image' => 'Custom Image'
+                    ], 
+                    'default' => 'color'
+                ],
+                [
+                    'id' => 'styling_content_background-wrapper-color',
                     'type' => 'color_rgba',
-                    'title' => 'Wrapper Background Color',
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
+                    'class' => 'them_button_set',
                     'default' => [
                         'alpha' => 1
                     ],
@@ -40,22 +56,44 @@ class Content implements ISection {
                         'palette' => null, // show default
                         'input_text' => 'Select Color'
                     ],
+                    'required' => ['styling_content_background-wrapper-type', '=', 'color']
                 ],
                 [
-                    'id' => 'styling_content_wrapper-background-image',
-                    'type' => 'media',
-                    'title' => __('Wrapper Background Image', THEME_DOMAIN),
-                    'compiler' => 'true',
-                    'subtitle' => __('Background Image For Main Content Area.++', THEME_DOMAIN),
+                    'id' => 'styling_content_background-wrapper-pattern',
+                    'type' => 'image_select',
+                    'class' => 'them_patterns them_button_set',
+                    'tiles' => true,
+                    'options' => $patterns,
+                    'default' => '01',
+                    'required' => ['styling_content_background-wrapper-type', '=', 'pattern']
                 ],
                 [
-                    'id' => 'styling_content_blocks-background-color',
+                    'id'       => 'styling_content_background-wrapper-image',
+                    'type'     => 'background',
+                    'subtitle' => __('Body background with image, color, etc.', THEME_DOMAIN),
+                    'class' => 'them_button_set',
+                    'desc'     => __('This is the description field, again good for additional info.', THEME_DOMAIN),
+                    'required' => ['styling_content_background-wrapper-type', '=', 'image']
+                ],
+                [
+                    'id'       => 'styling_content_background-blocks-type',
+                    'type'     => 'button_set',
+                    'title'    => __('Background type', THEME_DOMAIN),
+                    'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
+                    'options' => [
+                        'color' => 'Color', 
+                        'pattern' => 'Pattern', 
+                        'image' => 'Custom Image'
+                    ], 
+                    'default' => 'color'
+                ],
+                [
+                    'id' => 'styling_content_background-blocks-color',
                     'type' => 'color_rgba',
-                    'title' => 'Content Blocks Background Color',
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
+                    'class' => 'them_button_set',
                     'default' => [
-                        'color' => '#FFFFFF',
                         'alpha' => 1
                     ],
                     'options' => [
@@ -75,14 +113,25 @@ class Content implements ISection {
                         'palette' => null, // show default
                         'input_text' => 'Select Color'
                     ],
+                    'required' => ['styling_content_background-blocks-type', '=', 'color']
                 ],
                 [
-                    'id' => 'styling_content_blocks-background-image',
-                    'type' => 'media',
-                    'title' => __('Content Blocks Background Image', THEME_DOMAIN),
-                    'compiler' => 'true',
-                    'subtitle' => __('Background Image For Main Content Area.++', THEME_DOMAIN),
-                ]
+                    'id' => 'styling_content_background-blocks-pattern',
+                    'type' => 'image_select',
+                    'class' => 'them_patterns them_button_set',
+                    'tiles' => true,
+                    'options' => $patterns,
+                    'default' => '01',
+                    'required' => ['styling_content_background-blocks-type', '=', 'pattern']
+                ],
+                [
+                    'id'       => 'styling_content_background-blocks-image',
+                    'type'     => 'background',
+                    'subtitle' => __('Body background with image, color, etc.', THEME_DOMAIN),
+                    'class' => 'them_button_set',
+                    'desc'     => __('This is the description field, again good for additional info.', THEME_DOMAIN),
+                    'required' => ['styling_content_background-blocks-type', '=', 'image']
+                ],
             ]
         ]);
         

@@ -13,7 +13,7 @@ class General implements ICSS {
         $bodyColor = $general->getBodyColor();
         $linkColor = $general->getLinkColor();
         $linkHoverColor = $general->getLinkHoverColor();
-        $backgroundColor = $general->getBackgroundColor();
+        $pageBackground = $general->getPageBackground();
         
         $cssBlocks = [];
         $cssBlocks[] = [
@@ -27,7 +27,7 @@ class General implements ICSS {
                 'color' => $linkHoverColor
             ],
             'body #page' => [
-                'background-color' => $backgroundColor
+                'background' => $pageBackground
             ]
         ];
         
