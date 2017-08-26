@@ -1,6 +1,6 @@
 <?php
 
-namespace Them\Header;
+namespace Them\Content;
 
 use Them\Helpers;
 use Them\ICSS;
@@ -11,7 +11,6 @@ class CSS implements ICSS {
         $CSS = new Helpers\CSS;
         $CSS->addCSS(new CSS\Layout);
         $CSS->addCSS(new CSS\Styling);
-        $CSS->addCSS(new CSS\Menu);
         return $CSS->getCSS();
     }
 
@@ -19,7 +18,6 @@ class CSS implements ICSS {
         $CSS = new Helpers\CSS;
         $CSS->addCSSMedia(new CSS\Layout);
         $CSS->addCSSMedia(new CSS\Styling);
-        $CSS->addCSSMedia(new CSS\Menu);
         return $CSS->getCSSMedia();
     }
 

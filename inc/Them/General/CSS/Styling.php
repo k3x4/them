@@ -1,19 +1,19 @@
 <?php
 
-namespace Them\Styling\CSS;
+namespace Them\General\CSS;
 
-use Them\Styling;
+use Them\General;
 use Them\ICSS;
 
-class General implements ICSS {
+class Styling implements ICSS {
      
     public function getCSS() {
-        $general = new Styling\Main\General;
+        $styling = new General\Main\Styling;
         
-        $bodyColor = $general->getBodyColor();
-        $linkColor = $general->getLinkColor();
-        $linkHoverColor = $general->getLinkHoverColor();
-        $pageBackground = $general->getPageBackground();
+        $bodyColor = $styling->getBodyColor();
+        $linkColor = $styling->getLinkColor();
+        $linkHoverColor = $styling->getLinkHoverColor();
+        $pageBackground = $styling->getPageBackground();
         
         $cssBlocks = [];
         $cssBlocks[] = [

@@ -1,11 +1,11 @@
 <?php
 
-namespace Them\Styling\Main;
+namespace Them\General\Main;
 
 use Them\Options;
 use Them\Helpers;
 
-class General extends Options {
+class Styling extends Options {
     
     public function getBodyColor(){
         return $this->options['body-color'];

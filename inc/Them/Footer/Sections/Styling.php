@@ -1,11 +1,11 @@
 <?php
 
-namespace Them\Styling\Sections;
+namespace Them\Footer\Sections;
 
 use Them\ISection;
 use Them\Helpers;
 
-class Footer implements ISection {
+class Styling implements ISection {
 
     public static function addSection() {
         
@@ -13,21 +13,21 @@ class Footer implements ISection {
         $patterns = $registry['patterns'];        
 
         \Redux::setSection(THEME_DOMAIN, [
-            'title' => __('Footer', THEME_DOMAIN),
-            'desc' => __('Footer Settings', THEME_DOMAIN),
-            'id' => 'styling_footer',
+            'title' => __('Styling', THEME_DOMAIN),
+            'desc' => __('Styling Settings', THEME_DOMAIN),
+            'id' => 'footer_styling',
             'subsection' => true,
             'fields' => [
                 
                 /*** BACKGROUND ***/
                 [
-                    'id' => 'styling_footer_section-background-start',
+                    'id' => 'footer_styling_section-background-start',
                     'type' => 'section',
                     'title' => __('Background', THEME_DOMAIN),
                     'indent' => true 
                 ],
                 [
-                    'id'       => 'styling_footer_background-footer-type',
+                    'id'       => 'footer_styling_background-footer-type',
                     'type'     => 'button_set',
                     'title'    => __('Background type', THEME_DOMAIN),
                     'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
@@ -39,7 +39,7 @@ class Footer implements ISection {
                     'default' => 'color'
                 ],
                 [
-                    'id' => 'styling_footer_background-footer-color',
+                    'id' => 'footer_styling_background-footer-color',
                     'type' => 'color_rgba',
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
@@ -65,40 +65,40 @@ class Footer implements ISection {
                         'palette' => null, // show default
                         'input_text' => 'Select Color'
                     ],
-                    'required' => ['styling_footer_background-footer-type', '=', 'color']
+                    'required' => ['footer_styling_background-footer-type', '=', 'color']
                 ],
                 [
-                    'id' => 'styling_footer_background-footer-pattern',
+                    'id' => 'footer_styling_background-footer-pattern',
                     'type' => 'image_select',
                     'class' => 'them_patterns them_button_set',
                     'tiles' => true,
                     'options' => $patterns,
                     'default' => '01',
-                    'required' => ['styling_footer_background-footer-type', '=', 'pattern']
+                    'required' => ['footer_styling_background-footer-type', '=', 'pattern']
                 ],
                 [
-                    'id'       => 'styling_footer_background-footer-image',
+                    'id'       => 'footer_styling_background-footer-image',
                     'type'     => 'background',
                     'subtitle' => __('Body background with image, color, etc.', THEME_DOMAIN),
                     'class' => 'them_button_set',
                     'desc'     => __('This is the description field, again good for additional info.', THEME_DOMAIN),
-                    'required' => ['styling_footer_background-footer-type', '=', 'image']
+                    'required' => ['footer_styling_background-footer-type', '=', 'image']
                 ],
                 [
-                    'id'     => 'styling_footer_section-background-end',
+                    'id'     => 'footer_styling_section-background-end',
                     'type'   => 'section',
                     'indent' => false,
                 ],
                 
                 /*** CONTAINER ***/
                 [
-                    'id' => 'styling_footer_section-container-start',
+                    'id' => 'footer_styling_section-container-start',
                     'type' => 'section',
                     'title' => __('Container', THEME_DOMAIN),
                     'indent' => true 
                 ],
                 [
-                    'id'       => 'styling_footer_background-container-type',
+                    'id'       => 'footer_styling_background-container-type',
                     'type'     => 'button_set',
                     'title'    => __('Background type', THEME_DOMAIN),
                     'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
@@ -110,7 +110,7 @@ class Footer implements ISection {
                     'default' => 'color'
                 ],
                 [
-                    'id' => 'styling_footer_background-container-color',
+                    'id' => 'footer_styling_background-container-color',
                     'type' => 'color_rgba',
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
@@ -135,40 +135,40 @@ class Footer implements ISection {
                         'palette' => null, // show default
                         'input_text' => 'Select Color'
                     ],
-                    'required' => ['styling_footer_background-container-type', '=', 'color']
+                    'required' => ['footer_styling_background-container-type', '=', 'color']
                 ],
                 [
-                    'id' => 'styling_footer_background-container-pattern',
+                    'id' => 'footer_styling_background-container-pattern',
                     'type' => 'image_select',
                     'class' => 'them_patterns them_button_set',
                     'tiles' => true,
                     'options' => $patterns,
                     'default' => '01',
-                    'required' => ['styling_footer_background-container-type', '=', 'pattern']
+                    'required' => ['footer_styling_background-container-type', '=', 'pattern']
                 ],
                 [
-                    'id'       => 'styling_footer_background-container-image',
+                    'id'       => 'footer_styling_background-container-image',
                     'type'     => 'background',
                     'subtitle' => __('Body background with image, color, etc.', THEME_DOMAIN),
                     'class' => 'them_button_set',
                     'desc'     => __('This is the description field, again good for additional info.', THEME_DOMAIN),
-                    'required' => ['styling_footer_background-container-type', '=', 'image']
+                    'required' => ['footer_styling_background-container-type', '=', 'image']
                 ],
                 [
-                    'id'     => 'styling_footer_section-container-end',
+                    'id'     => 'footer_styling_section-container-end',
                     'type'   => 'section',
                     'indent' => false,
                 ],
                 
                 /*** WIDGETS ***/
                 [
-                    'id' => 'styling_footer_section-widgets-start',
+                    'id' => 'footer_styling_section-widgets-start',
                     'type' => 'section',
                     'title' => __('Widgets', THEME_DOMAIN),
                     'indent' => true 
                 ],
                 [
-                    'id'       => 'styling_footer_background-widgets-type',
+                    'id'       => 'footer_styling_background-widgets-type',
                     'type'     => 'button_set',
                     'title'    => __('Background type', THEME_DOMAIN),
                     'subtitle' => __('No validation can be done on this field type', THEME_DOMAIN),
@@ -180,7 +180,7 @@ class Footer implements ISection {
                     'default' => 'color'
                 ],
                 [
-                    'id' => 'styling_footer_background-widgets-color',
+                    'id' => 'footer_styling_background-widgets-color',
                     'type' => 'color_rgba',
                     'subtitle' => 'Set color and alpha channel',
                     'desc' => 'The caption of this button may be changed to whatever you like!',
@@ -205,27 +205,27 @@ class Footer implements ISection {
                         'palette' => null, // show default
                         'input_text' => 'Select Color'
                     ],
-                    'required' => ['styling_footer_background-widgets-type', '=', 'color']
+                    'required' => ['footer_styling_background-widgets-type', '=', 'color']
                 ],
                 [
-                    'id' => 'styling_footer_background-widgets-pattern',
+                    'id' => 'footer_styling_background-widgets-pattern',
                     'type' => 'image_select',
                     'class' => 'them_patterns them_button_set',
                     'tiles' => true,
                     'options' => $patterns,
                     'default' => '01',
-                    'required' => ['styling_footer_background-widgets-type', '=', 'pattern']
+                    'required' => ['footer_styling_background-widgets-type', '=', 'pattern']
                 ],
                 [
-                    'id'       => 'styling_footer_background-widgets-image',
+                    'id'       => 'footer_styling_background-widgets-image',
                     'type'     => 'background',
                     'subtitle' => __('Body background with image, color, etc.', THEME_DOMAIN),
                     'class' => 'them_button_set',
                     'desc'     => __('This is the description field, again good for additional info.', THEME_DOMAIN),
-                    'required' => ['styling_footer_background-widgets-type', '=', 'image']
+                    'required' => ['footer_styling_background-widgets-type', '=', 'image']
                 ],
                 [
-                    'id' => 'styling_footer_widgets-text-color',
+                    'id' => 'footer_styling_widgets-text-color',
                     'type' => 'color',
                     'transparent' => false,
                     'title' => __('Text color', THEME_DOMAIN),
@@ -233,41 +233,41 @@ class Footer implements ISection {
                     'default' => '#aaaaaa',
                 ],
                 [
-                    'id' => 'styling_footer_widgets-links-text-override-color-enable',
+                    'id' => 'footer_styling_widgets-links-text-override-color-enable',
                     'type' => 'switch',
                     'title' => __('Override default links text color', THEME_DOMAIN),
                     'default' => false,
                 ],
                 [
-                    'id' => 'styling_footer_widgets-links-text-color',
+                    'id' => 'footer_styling_widgets-links-text-color',
                     'type' => 'color',
                     'transparent' => false,
                     'title' => __('Links text color', THEME_DOMAIN),
                     'subtitle' => __('Pick a main color for the theme (default: #000).++', THEME_DOMAIN),
                     'default' => '#222222',
-                    'required' => ['styling_footer_widgets-links-text-override-color-enable', '=', true]
+                    'required' => ['footer_styling_widgets-links-text-override-color-enable', '=', true]
                 ],
                 [
-                    'id' => 'styling_footer_widgets-links-text-hover-color-enable',
+                    'id' => 'footer_styling_widgets-links-text-hover-color-enable',
                     'type' => 'switch',
                     'title' => __('Links text color change on hover', THEME_DOMAIN),
                     'default' => false,
-                    'required' => ['styling_footer_widgets-links-text-override-color-enable', '=', true]
+                    'required' => ['footer_styling_widgets-links-text-override-color-enable', '=', true]
                 ],
                 [
-                    'id' => 'styling_footer_widgets-links-text-hover-color',
+                    'id' => 'footer_styling_widgets-links-text-hover-color',
                     'type' => 'color',
                     'transparent' => false,
                     'title' => __('Links text hover color', THEME_DOMAIN),
                     'subtitle' => __('Pick a main color for the theme (default: #000).++', THEME_DOMAIN),
                     'default' => '#3366CC',
                     'required' => [
-                        ['styling_footer_widgets-links-text-override-color-enable', '=', true],
-                        ['styling_footer_widgets-links-text-hover-color-enable', '=', true]
+                        ['footer_styling_widgets-links-text-override-color-enable', '=', true],
+                        ['footer_styling_widgets-links-text-hover-color-enable', '=', true]
                     ]
                 ],
                 [
-                    'id'     => 'styling_footer_section-widgets-end',
+                    'id'     => 'footer_styling_section-widgets-end',
                     'type'   => 'section',
                     'indent' => false,
                 ]

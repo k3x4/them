@@ -24,17 +24,77 @@ class Menu implements ICSS {
         $paddingUL = Helpers\Converter::spacingToCSS($paddingUL, 'padding');
         $paddingItems = Helpers\Converter::spacingToCSS($paddingItems, 'padding');
         
+        $menuBackground = $menu->getMenuBackground();
+        
+        $menuItemsColor = $menu->getMenuItemsTextColor();
+        $menuItemsHoverColor = $menu->getMenuItemsTextHoverColor();
+        $menuItemsBackgroundColor = $menu->getMenuItemsBackgroundColor();
+        $menuItemsHoverBackgroundColor = $menu->getMenuItemsBackgroundHoverColor();
+        
+        $menuSubitemsColor = $menu->getMenuSubitemsTextColor();
+        $menuSubitemsHoverColor = $menu->getMenuSubitemsTextHoverColor();
+        $menuSubitemsBackgroundColor = $menu->getMenuSubitemsBackgroundColor();
+        $menuSubitemsHoverBackgroundColor = $menu->getMenuSubitemsBackgroundHoverColor();
+        
         $cssBlocks = [];
         $cssBlocks[] = [
             '.main-navigation .nav-menu' => [
                 'padding' => $paddingUL,
-                'display' => 'block'
+                'display' => 'block',
+                'background' => $menuBackground
             ],
             '.main-navigation .nav-menu li a' => [
                 'padding' => $paddingItems,
                 'display' => 'block'
+            ],
+            '.main-navigation .nav-menu li a, ' .
+            '.main-navigation .nav-menu li a:visited' => [
+                'color' => $menuItemsColor,
+                'background-color' => $menuItemsBackgroundColor
+            ],
+            '.main-navigation .nav-menu .sub-menu li a, ' .
+            '.main-navigation .nav-menu .sub-menu li a:visited' => [
+                'color' => $menuSubitemsColor,
+                'background-color' => $menuSubitemsBackgroundColor
+            ],
+        ];
+        
+        if($menu->menuItemsHoverTextChange()):
+        $cssBlocks[] = [
+            '.main-navigation .nav-menu li a:hover, ' .
+            '.main-navigation .nav-menu li a:focus' => [
+                'color' => $menuItemsHoverColor
             ]
         ];
+        endif;
+        
+        if($menu->menuItemsHoverBackgroundChange()):
+        $cssBlocks[] = [
+            '.main-navigation .nav-menu li a:hover, ' .
+            '.main-navigation .nav-menu li a:focus' => [
+                'background-color' => $menuItemsHoverBackgroundColor
+            ]
+        ];
+        endif;
+        
+        if($menu->menuSubitemsHoverTextChange()):
+        $cssBlocks[] = [
+            '.main-navigation .nav-menu .sub-menu li a:hover, ' .
+            '.main-navigation .nav-menu .sub-menu li a:focus' => [
+                'color' => $menuSubitemsHoverColor
+            ]
+        ];
+        endif;
+        
+        if($menu->menuSubitemsHoverBackgroundChange()):
+        $cssBlocks[] = [
+            '.main-navigation .nav-menu .sub-menu li a:hover, ' .
+            '.main-navigation .nav-menu .sub-menu li a:focus' => [
+                'background-color' => $menuSubitemsHoverBackgroundColor
+            ]
+        ];
+        endif;
+
         return $cssBlocks;
     }
     

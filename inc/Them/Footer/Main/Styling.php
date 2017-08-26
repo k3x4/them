@@ -1,11 +1,11 @@
 <?php
 
-namespace Them\Styling\Main;
+namespace Them\Footer\Main;
 
 use Them\Options;
 use Them\Helpers;
 
-class Footer extends Options {
+class Styling extends Options {
     
     public function getFooterBackground(){
         return Helpers\Converter::Background(__CLASS__, 'background-footer');

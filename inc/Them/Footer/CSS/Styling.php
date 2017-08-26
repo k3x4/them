@@ -1,15 +1,16 @@
 <?php
 
-namespace Them\Styling\CSS;
+namespace Them\Footer\CSS;
 
-use Them\Styling;
+use Them\Footer;
+use Them\General;
 use Them\ICSS;
 
-class Footer implements ICSS {
+class Styling implements ICSS {
      
     public function getCSS() {
-        $footer = new Styling\Main\Footer;
-        $general = new Styling\Main\General;
+        $footer = new Footer\Main\Styling;
+        $general = new General\Main\Styling;
         
         $footerBackground = $footer->getFooterBackground();
         $containerBackground = $footer->getContainerBackground();

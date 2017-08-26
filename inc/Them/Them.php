@@ -21,6 +21,7 @@ class Them {
         
         add_action('redux/options/' . THEME_DOMAIN . '/saved', [$this, 'saveStylesheetFile']);
         add_action('redux/options/' . THEME_DOMAIN . '/reset', [$this, 'saveStylesheetFile']);
+        add_action('redux/options/' . THEME_DOMAIN . '/section/reset', [$this, 'saveStylesheetFile']);
     }
     
     private function addPreviews(){
@@ -57,16 +58,11 @@ class Them {
     private function addSections(){
         $this->addSection(new General\Sections);
         $this->addSection(new General\Sections\Layout);
+        $this->addSection(new General\Sections\Styling);
         
         $this->addSection(new LogoFavicon\Sections);
         $this->addSection(new LogoFavicon\Sections\Logo);
         $this->addSection(new LogoFavicon\Sections\Favicon);
-        
-        $this->addSection(new Styling\Sections);
-        $this->addSection(new Styling\Sections\General);
-        $this->addSection(new Styling\Sections\Header);
-        $this->addSection(new Styling\Sections\Content);
-        $this->addSection(new Styling\Sections\Footer);
         
         $this->addSection(new Typography\Sections);
         $this->addSection(new Typography\Sections\Body);
@@ -78,11 +74,17 @@ class Them {
         
         $this->addSection(new Header\Sections);
         $this->addSection(new Header\Sections\Layout);
+        $this->addSection(new Header\Sections\Styling);
         $this->addSection(new Header\Sections\Menu);
         $this->addSection(new Header\Sections\Sticky);
+        
+        $this->addSection(new Content\Sections);
+        $this->addSection(new Content\Sections\Layout);
+        $this->addSection(new Content\Sections\Styling);
 
         $this->addSection(new Footer\Sections);
         $this->addSection(new Footer\Sections\Layout);
+        $this->addSection(new Footer\Sections\Styling);
 
         $this->addSection(new Sidebars\Sections);
         $this->addSection(new Sidebars\Sections\Layout);    
@@ -101,10 +103,10 @@ class Them {
     private function addHooks(){
         $this->addHook(new General\Hooks);
         $this->addHook(new LogoFavicon\Hooks);
-        $this->addHook(new Styling\Hooks);
         $this->addHook(new Typography\Hooks);
         $this->addHook(new Blog\Hooks);
         $this->addHook(new Header\Hooks);
+        $this->addHook(new Content\Hooks);
         $this->addHook(new Footer\Hooks);
         $this->addHook(new Sidebars\Hooks);
     }
@@ -127,9 +129,9 @@ class Them {
 
         $cssBuilder->addCSSObject(new General\CSS);
         $cssBuilder->addCSSObject(new LogoFavicon\CSS);
-        $cssBuilder->addCSSObject(new Styling\CSS);
         $cssBuilder->addCSSObject(new Typography\CSS);
         $cssBuilder->addCSSObject(new Header\CSS);
+        $cssBuilder->addCSSObject(new Content\CSS);
         $cssBuilder->addCSSObject(new Footer\CSS);
         $cssBuilder->addCSSObject(new Sidebars\CSS);
 

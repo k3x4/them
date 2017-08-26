@@ -1,17 +1,17 @@
 <?php
 
-namespace Them\Styling\CSS;
+namespace Them\Content\CSS;
 
-use Them\Styling;
+use Them\Content;
 use Them\ICSS;
 
-class Content implements ICSS {
+class Styling implements ICSS {
      
     public function getCSS() {
-        $content = new Styling\Main\Content;
+        $styling = new Content\Main\Styling;
         
-        $wrapperBackground = $content->getWrapperBackground();
-        $blocksBackground = $content->getBlocksBackground();
+        $wrapperBackground = $styling->getWrapperBackground();
+        $blocksBackground = $styling->getBlocksBackground();
         
         $cssBlocks = [];
         $cssBlocks[] = [

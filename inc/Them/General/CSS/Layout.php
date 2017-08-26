@@ -8,22 +8,11 @@ use Them\ICSS;
 
 class Layout implements ICSS {
     
-    private $type;
-    
-    public function __construct() {
-        $layout = new General\Main\Layout;
-        $containerType = $layout->getContainerType();
-        $this->type = Helpers\Factory::make(__CLASS__, $containerType);
-    }
-    
-    private function generalCSS(){
+    public function getCSS() {
         $general = new General\Main\Layout;
 
         $generalPadding = $general->getGeneralPadding();
-        $mainWrapperPadding = $general->getMainWrapperPadding();
-        
         $generalPadding = Helpers\Converter::spacingToCSS($generalPadding, 'padding');
-        $mainWrapperPadding = Helpers\Converter::spacingToCSS($mainWrapperPadding, 'padding');
         
         $cssBlocks = [];
         $cssBlocks[] = [
@@ -53,27 +42,13 @@ class Layout implements ICSS {
             '.col-xl-10, .col-xl-11, .col-xl-12, ' .
             '.col-xl, .col-xl-auto' => [
                 'padding' => $generalPadding
-            ],
-            '.content.container' => [
-                'padding' => $mainWrapperPadding
             ]
         ];
         return $cssBlocks;
     }
-    
-    private function generalCSSMedia(){
-        return [];
-    }
-    
-    public function getCSS() {
-        return array_merge($this->generalCSS(), $this->type->getCSS());
-    }
 
     public function getCSSMedia() {
-        $CSS = new Helpers\CSS;
-        $generalCSSMedia = $this->generalCSSMedia();
-        $typeCSSMedia = $this->type->getCSSMedia();
-        return $CSS->mediaMerge($generalCSSMedia, $typeCSSMedia);
+        return [];
     }
     
 }

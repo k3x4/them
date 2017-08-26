@@ -1,11 +1,11 @@
 <?php
 
-namespace Them\Styling\Main;
+namespace Them\Content\Main;
 
 use Them\Options;
 use Them\Helpers;
 
-class Content extends Options {
+class Styling extends Options {
     
     public function getWrapperBackground(){
         return Helpers\Converter::Background(__CLASS__, 'background-wrapper');

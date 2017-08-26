@@ -11,11 +11,11 @@ get_header();
 
 <div class="wrapper" id="wrapper-index">
 
-    <div class="<?php echo themClass('general_layout')->getContainerClass(); ?>" id="content" tabindex="-1">
+    <div class="<?php echo themClass('content_layout')->getContainerClass(); ?>" id="content" tabindex="-1">
 
         <div class="row">
 
-            <div class="<?php echo themClass('general_layout')->getContentClasses(); ?>" id="primary">
+            <div class="<?php echo themClass('content_layout')->getContentClasses(); ?>" id="primary">
                 <main id="main" class="site-main">
 
                     <?php
