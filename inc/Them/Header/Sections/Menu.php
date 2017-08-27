@@ -18,6 +18,14 @@ class Menu implements ISection {
             'id' => 'header_menu',
             'subsection' => true,
             'fields' => [
+                
+                /*** LAYOUT ***/
+                [
+                    'id' => 'header_menu_section-layout-start',
+                    'type' => 'section',
+                    'title' => __('Layout', THEME_DOMAIN),
+                    'indent' => true 
+                ],
                 [
                     'id' => 'header_menu_padding',
                     'type' => 'them_spacing',
@@ -99,6 +107,11 @@ class Menu implements ISection {
                         'units' => '%'
                     ],
                     'required' => ['header_menu_custom-width', '=', true]
+                ],
+                [
+                    'id'     => 'header_menu_section-layout-end',
+                    'type'   => 'section',
+                    'indent' => false,
                 ],
                 
                 /*** STYLING ***/
@@ -187,6 +200,12 @@ class Menu implements ISection {
                     'subtitle' => __('Pick a main color for the theme (default: #000).++', THEME_DOMAIN),
                     'default' => '#3366CC',
                     'required' => ['header_menu_menu-items-text-hover-color-enable', '=', true]
+                ],
+                
+                [
+                    'id' => 'header_menu_subsection-items-background',
+                    'type' => 'them_subsection',
+                    'title' => __('Items background', THEME_DOMAIN),
                 ],
                 [
                     'id' => 'header_menu_menu-items-background-color',
@@ -340,6 +359,7 @@ class Menu implements ISection {
                     'type'   => 'section',
                     'indent' => false,
                 ]
+                
             ]
         ]);
         

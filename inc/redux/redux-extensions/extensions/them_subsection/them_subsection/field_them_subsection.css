@@ -1,0 +1,9 @@
+.redux-main .them_subtitle{
+	font-size:16px;
+	font-weight:bold;
+	color:#00f;
+	padding-top: 50px;
+    float: left;
+    padding-bottom: 15px;
+	margin-left:-20px;
+}
