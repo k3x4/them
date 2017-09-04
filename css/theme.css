@@ -75,7 +75,7 @@ them-h1l .main-navigation{float:right;}
 .main-navigation .nav-menu{padding:0px;display:block;background:transparent;}
 .main-navigation .nav-menu li a{padding:15px 20px 15px 20px;display:block;}
 .main-navigation .nav-menu li a, .main-navigation .nav-menu li a:visited{color:#222222;background-color:transparent;}
-.main-navigation .nav-menu .sub-menu li a, .main-navigation .nav-menu .sub-menu li a:visited{color:#222222;background-color:#FFFFFF;}
+.main-navigation .nav-menu ul.children li a, .main-navigation .nav-menu ul.children li a:visited{color:#222222;background-color:#FFFFFF;}
 .content.container, .content.container-fluid{padding:30px 0px 50px 0px;background:transparent;}
 .content.container .content-area-wrapper #main, .content.container-fluid .content-area-wrapper #main, .content.container .widget-area, .content.container-fluid .widget-area{background:transparent;}
 .footer.container, .footer.container-fluid{padding:0px 15px 0px 15px;}

@@ -15,6 +15,10 @@ class Registry implements \ArrayAccess {
     public function buildOptions() {
         $them = get_option(THEME_DOMAIN);
 
+        if(!$them){
+            return;
+        }
+        
         foreach ($them as $key => $value) {
             $keyParts = explode('_', $key);
             if (count($keyParts) < 3)

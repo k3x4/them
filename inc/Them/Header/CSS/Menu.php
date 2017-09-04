@@ -52,8 +52,8 @@ class Menu implements ICSS {
                 'color' => $menuItemsColor,
                 'background-color' => $menuItemsBackgroundColor
             ],
-            '.main-navigation .nav-menu .sub-menu li a, ' .
-            '.main-navigation .nav-menu .sub-menu li a:visited' => [
+            '.main-navigation .nav-menu ul.children li a, ' .
+            '.main-navigation .nav-menu ul.children li a:visited' => [
                 'color' => $menuSubitemsColor,
                 'background-color' => $menuSubitemsBackgroundColor
             ],
@@ -79,8 +79,8 @@ class Menu implements ICSS {
         
         if($menu->menuSubitemsHoverTextChange()):
         $cssBlocks[] = [
-            '.main-navigation .nav-menu .sub-menu li a:hover, ' .
-            '.main-navigation .nav-menu .sub-menu li a:focus' => [
+            '.main-navigation .nav-menu ul.children li a:hover, ' .
+            '.main-navigation .nav-menu ul.children li a:focus' => [
                 'color' => $menuSubitemsHoverColor
             ]
         ];
@@ -88,8 +88,8 @@ class Menu implements ICSS {
         
         if($menu->menuSubitemsHoverBackgroundChange()):
         $cssBlocks[] = [
-            '.main-navigation .nav-menu .sub-menu li a:hover, ' .
-            '.main-navigation .nav-menu .sub-menu li a:focus' => [
+            '.main-navigation .nav-menu ul.children li a:hover, ' .
+            '.main-navigation .nav-menu ul.children li a:focus' => [
                 'background-color' => $menuSubitemsHoverBackgroundColor
             ]
         ];
