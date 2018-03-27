@@ -10,8 +10,8 @@
 
 define('THEME_DOMAIN', 'them');
 define('THEME_VERSION', '1.0.0');
-define('THEME_DIR', untrailingslashit(get_template_directory()));
-define('THEME_URL', untrailingslashit(get_template_directory_uri()));
+define('THEME_DIR', get_template_directory());
+define('THEME_URL', get_template_directory_uri());
 
 //require_once THEME_DIR . '/inc/classes/them.php';
 
