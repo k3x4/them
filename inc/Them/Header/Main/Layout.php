@@ -101,6 +101,9 @@ class Layout extends Options {
     
     public function getLayoutName() {
         $layout = $this->getLayout();
+        if(!$layout){
+            return;
+        }
         $layoutKeys = [
             ORIENTATION_HORIZONTAL_TYPE1_LEFT       => 'HorizontalOneLeft',
             ORIENTATION_HORIZONTAL_TYPE1_CENTER     => 'HorizontalOneCenter',
