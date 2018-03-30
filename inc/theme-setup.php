@@ -10,15 +10,6 @@ if (!function_exists('them_setup')) :
      * as indicating support for post thumbnails.
      */
     function them_setup() {
-
-        /*
-         * Add Redux Framework
-         */
-        require THEME_DIR . '/inc/redux/admin-init.php';
-        
-        $them = new Them\Them;
-        $them->setupMenu();
-
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.

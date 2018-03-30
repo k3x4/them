@@ -1,6 +1,6 @@
 <?php
 
-require_once THEME_DIR . '/inc/lib/tgmpa.php';
+require_once THEME_DIR . '/inc/lib/tgmpa/class-tgm-plugin-activation.php';
 add_action( 'tgmpa_register', 'them_register_required_plugins' );
 
 function them_register_required_plugins() {
@@ -11,14 +11,14 @@ function them_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'         => 'Contact Form 7', // The plugin name
-			'slug'         => 'contact-form-7', // The plugin slug (typically the folder name)
-			'required'     => false,
+			'name'         => 'Redux Framework', // The plugin name
+			'slug'         => 'redux-framework', // The plugin slug (typically the folder name)
+			'required'     => true,
 			'version'      => '',
-			'screen-image' => trailingslashit(get_template_directory_uri()).'includes/admin/assets/img/cf7-plugin-image.jpg',
+			//'screen-image' => trailingslashit(get_template_directory_uri()).'includes/admin/assets/img/cf7-plugin-image.jpg',
 		),
 
-
+                
 
 	);
 
