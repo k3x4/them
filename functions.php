@@ -22,3 +22,17 @@ require_once THEME_DIR . '/inc/template-tags.php';
 require_once THEME_DIR . '/inc/template-functions.php';
 require_once THEME_DIR . '/inc/jetpack.php';
 require_once THEME_DIR . '/inc/lib/vendor/autoload.php';
+
+/*
+$k3x44 = [];
+add_action( 'all', function(){ 
+    global $k3x44;
+    if(!isset($k3x44[current_filter()])){
+        file_put_contents('actions_list.txt', current_filter().PHP_EOL, FILE_APPEND);
+    }
+    $k3x44[current_filter()]=''; 
+    
+} );
+ * 
+ * 
+ */
