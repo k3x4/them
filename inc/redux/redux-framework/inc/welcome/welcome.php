@@ -47,8 +47,6 @@
                 $this->check_version();
             }
             update_option( 'redux_version_upgraded_from', ReduxFramework::$_version );
-            set_transient( '_redux_activation_redirect', true, 30 );
-
         }
 
 
@@ -482,7 +480,7 @@
                 <a href="http://docs.reduxframework.com/" class="docs button button-primary">Docs</a>
                 <a href="http://wordpress.org/plugins/redux-framework/" class="review-us button button-primary"
                     target="_blank">Review Us</a>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=them-xclick&hosted_button_id=MMFMHWUPKHKPW"
+                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MMFMHWUPKHKPW"
                     class="review-us button button-primary" target="_blank">Donate</a>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://reduxframework.com"
                     data-text="Reduce your dev time! Redux is the most powerful option framework for WordPress on the web"
