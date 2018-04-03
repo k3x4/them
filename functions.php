@@ -22,6 +22,16 @@ require_once THEME_DIR . '/inc/jetpack.php';
 require_once THEME_DIR . '/inc/lib/vendor/autoload.php';
 
 /*
+function exception_error_handler($severity, $message, $file, $line) {
+    if (!(error_reporting() & $severity)) {
+        // This error code is not included in error_reporting
+        return;
+    }
+    throw new ErrorException($message, 0, $severity, $file, $line);
+}
+set_error_handler("exception_error_handler");
+*/
+/*
 $k3x44 = [];
 add_action( 'all', function(){ 
     global $k3x44;

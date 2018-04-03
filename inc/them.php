@@ -9,7 +9,8 @@ add_action('after_setup_theme', function() {
 
     $them = new Them\Them;
     $them->setupMenu();
+    $them->setupHooks();
 });
 
-$them = new Them\Them;
-$them->setupHooks();
+//$them = new Them\Them;
+//$them->setupHooks();
