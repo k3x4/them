@@ -93,8 +93,8 @@ class CSSBuilder {
 
         $compressor->keepSourceMapComment(false);
         $compressor->setLineBreakPosition(0);
-        $output_css = $this->CSS;
         //$output_css = $compressor->run($this->CSS);
+        $output_css = $this->CSS;
 
         file_put_contents($path, $output_css);
     }

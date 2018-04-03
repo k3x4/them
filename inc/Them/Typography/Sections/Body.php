@@ -41,8 +41,8 @@ class Body implements ISection {
                     'subtitle' => __('These settings control the typography for all body text.', THEME_DOMAIN),
                     'default' => [
                         'color' => '#333',
-                        'font-style' => '700',
-                        'font-family' => 'Abel',
+                        'font-style' => '400',
+                        'font-family' => 'Open Sans',
                         'google' => true,
                         'font-size' => '33px',
                         'line-height' => '40px'
