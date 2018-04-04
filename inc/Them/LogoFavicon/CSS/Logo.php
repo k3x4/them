@@ -14,10 +14,14 @@ class Logo implements ICSS {
         $logoPadding = $logo->getPadding();  
         $logoPadding = Helpers\Converter::spacingToCSS($logoPadding, 'padding');
         
+        $logoMargin = $logo->getMargin();  
+        $logoMargin = Helpers\Converter::spacingToCSS($logoMargin, 'margin');
+        
         $cssBlocks = [];
         $cssBlocks[] = [
             '.logo-col' => [
-                'padding' => $logoPadding
+                'padding' => $logoPadding,
+                'margin' => $logoMargin
             ]
         ];
         return $cssBlocks;

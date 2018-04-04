@@ -11,6 +11,14 @@ class Styling extends Options {
         return $this->options['body-color'];
     }
     
+    public function getPrimaryColor(){
+        return $this->options['primary-color'];
+    }
+    
+    public function getSecondaryColor(){
+        return $this->options['secondary-color'];
+    }
+    
     public function getLinkColor(){
         return $this->options['link-color'];
     }

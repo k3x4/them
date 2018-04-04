@@ -11,6 +11,8 @@ class Styling implements ICSS {
         $styling = new General\Main\Styling;
         
         $bodyColor = $styling->getBodyColor();
+        $primaryColor = $styling->getPrimaryColor();
+        $secondaryColor = $styling->getSecondaryColor();
         $linkColor = $styling->getLinkColor();
         $linkHoverColor = $styling->getLinkHoverColor();
         $pageBackground = $styling->getPageBackground();
@@ -19,6 +21,12 @@ class Styling implements ICSS {
         $cssBlocks[] = [
             'html, body' => [
                 'color' => $bodyColor
+            ],
+            '.primary-color' => [
+                'color' => $primaryColor
+            ],
+            '.secondary-color' => [
+                'color' => $secondaryColor
             ],
             'a, a:link, a:visited' => [
                 'color' => $linkColor

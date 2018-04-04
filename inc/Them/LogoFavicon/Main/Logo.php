@@ -20,5 +20,9 @@ class Logo extends Options {
     public function getPadding(){
         return $this->options['padding'];
     }
+    
+    public function getMargin(){
+        return $this->options['margin'];
+    }
 
 }
