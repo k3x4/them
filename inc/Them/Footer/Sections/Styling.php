@@ -46,7 +46,7 @@ class Styling implements ISection {
                     'class' => 'them_button_set',
                     'default' => [
                         'color' => '#434343',
-                        'alpha' => 0
+                        'alpha' => 1
                     ],
                     'options' => [
                         'show_input' => true,

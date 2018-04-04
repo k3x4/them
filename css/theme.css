@@ -67,29 +67,29 @@ a, a:link, a:visited{color:#336699;}
 a:hover, a:focus{color:#3366CC;}
 body #page{background:transparent;}
 .logo-col{padding:20px 15px 20px 15px;}
-.header-wrapper.container{padding:0px 15px 0px 15px;}
-.header.container{padding:0px 15px 0px 15px;}
+.header-wrapper.container{padding:0 15px 0 15px;}
+.header.container{padding:0 15px 0 15px;}
 them-h1l .main-navigation{float:right;}
 .site-header{background:transparent;}
 .site-header .header{background:transparent;}
-.main-navigation .nav-menu{padding:0px;display:block;background:transparent;}
+.main-navigation .nav-menu{padding:0;display:block;background:transparent;}
 .main-navigation .nav-menu li a{padding:15px 20px 15px 20px;display:block;}
 .main-navigation .nav-menu li a, .main-navigation .nav-menu li a:visited{color:#222222;background-color:transparent;}
-.main-navigation .nav-menu ul.children li a, .main-navigation .nav-menu ul.children li a:visited{color:#222222;background-color:#FFFFFF;}
-.content.container, .content.container-fluid{padding:30px 0px 50px 0px;background:transparent;}
+.main-navigation .nav-menu ul.children li a, .main-navigation .nav-menu ul.children li a:visited{color:#222222;background-color:rgba(255,255,255,1);}
+.content.container, .content.container-fluid{padding:30px 0 50px 0;background:transparent;}
 .content.container .content-area-wrapper #main, .content.container-fluid .content-area-wrapper #main, .content.container .widget-area, .content.container-fluid .widget-area{background:transparent;}
-.footer.container, .footer.container-fluid{padding:0px 15px 0px 15px;}
+.footer.container, .footer.container-fluid{padding:0 15px 0 15px;}
 .footer.container .widget-area.row-1{padding:20px;}
-.site-footer{background:#434343;}
+.site-footer{background:rgba(67,67,67,1);}
 .site-footer .footer.container, .site-footer .footer.container-fluid{background:transparent;}
 .site-footer .footer.container .widget-area, .site-footer .footer.container-fluid .widget-area{color:#aaaaaa;background:transparent;}
 .content.container .content-area-wrapper #main > *, .content.container-fluid .content-area-wrapper #main > *, .content.container .widget-area > *, .content.container-fluid .widget-area > *{overflow:hidden;}
-.content.container .widget-area-wrapper, .content.container-fluid .widget-area-wrapper{padding:0px 15px 0px 15px;}
+.content.container .widget-area-wrapper, .content.container-fluid .widget-area-wrapper{padding:0 15px 0 15px;}
 .content.container .widget-area, .content.container-fluid .widget-area{padding:20px;}
-.content.container .content-area-wrapper, .content.container-fluid .content-area-wrapper{padding:0px 15px 0px 15px;}
+.content.container .content-area-wrapper, .content.container-fluid .content-area-wrapper{padding:0 15px 0 15px;}
 .content.container .content-area-wrapper #main, .content.container-fluid .content-area-wrapper #main{padding:20px;}
-@media (min-width: 1200px) {
-.header-wrapper.container{width:1100px;}
-.content.container{width:1100px;}
-.footer.container{width:1100px;}
+@media (min-width: 1400px) {
+.header-wrapper.container{width:1200px;}
+.content.container{width:1200px;}
+.footer.container{width:1200px;}
 }
