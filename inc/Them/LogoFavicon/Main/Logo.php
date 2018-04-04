@@ -18,11 +18,11 @@ class Logo extends Options {
     }
     
     public function getPadding(){
-        return $this->options['padding'];
+        return $this->options['default-padding'];
     }
     
     public function getMargin(){
-        return $this->options['margin'];
+        return $this->options['default-margin'];
     }
 
 }
