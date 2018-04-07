@@ -108,7 +108,7 @@ function them_scripts() {
         wp_enqueue_script('comment-reply');
     }
 
-    wp_enqueue_style('them-generated-css', THEME_URL . '/css/theme.css');
+    wp_enqueue_style('them-generated-css', THEME_URL . '/css/theme.css', [], filemtime( THEME_DIR . '/css/theme.css' ));
 }
 
 add_action('wp_enqueue_scripts', 'them_scripts');
