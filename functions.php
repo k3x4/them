@@ -13,6 +13,7 @@ define('THEME_VERSION', '1.0.0');
 define('THEME_DIR', get_template_directory());
 define('THEME_URL', get_template_directory_uri());
 
+require_once THEME_DIR . '/inc/tgmpa.php';
 require_once THEME_DIR . '/inc/them.php';
 require_once THEME_DIR . '/inc/theme-setup.php';
 require_once THEME_DIR . '/inc/admin.php';

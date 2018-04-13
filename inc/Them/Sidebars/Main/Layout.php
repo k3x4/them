@@ -9,17 +9,34 @@ class Layout extends Options {
 
     public function getSidebarsCount() {
         $sidebars = explode('-', $this->options['scheme']);
+        $sidebars = array_filter($sidebars);
+        
+        if(!$sidebars){
+            return 0;
+        }
+        
         $count = $sidebars[SIDEBAR_COUNT];
         return intval($count);
     }
 
     public function getSidebarPosition($sidebar) {
         $sidebars = explode('-', $this->options['scheme']);
+        $sidebars = array_filter($sidebars);
+        
+        if(!$sidebars){
+            return false;
+        }
+
         return ($sidebars[$sidebar] == 'false') ? false : $sidebars[$sidebar];
     }
 
     public function getSidebarWidth($sidebar) {
         $count = $this->getSidebarsCount();
+        
+        if(!$count){
+            return 0;
+        }
+        
         $setting = 'count-' . $count . '-sidebar-' . $sidebar . '-width';
         $width = $this->options[$setting];
         return intval($width);
@@ -27,6 +44,11 @@ class Layout extends Options {
     
     public function getSidebarWrapperPadding($sidebar){
         $count = $this->getSidebarsCount();
+        
+        if(!$count){
+            return 0;
+        }
+        
         $setting = 'sidebar-' . $sidebar . '-wrapper-padding';
         $padding = $this->options[$setting];
         return $padding;
@@ -34,6 +56,11 @@ class Layout extends Options {
     
     public function getSidebarMainPadding($sidebar){
         $count = $this->getSidebarsCount();
+        
+        if(!$count){
+            return 0;
+        }
+        
         $setting = 'sidebar-' . $sidebar . '-main-padding';
         $padding = $this->options[$setting];
         return $padding;

@@ -17,9 +17,6 @@ class Registry implements \ArrayAccess {
 
         if(!$them){
             return;
-            //$baseData = file_get_contents(THEME_DIR . '/inc/redux/base-data.txt');
-            //$baseData = json_decode($baseData, true);
-            //update_option(THEME_DOMAIN, $baseData);
         }
         
         foreach ($them as $key => $value) {
