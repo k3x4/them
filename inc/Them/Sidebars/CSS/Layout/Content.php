@@ -36,4 +36,8 @@ class Content implements ICSS{
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

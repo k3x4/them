@@ -38,4 +38,8 @@ class VerticalOneLeft implements ICSS {
         ];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

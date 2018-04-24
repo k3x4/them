@@ -51,4 +51,8 @@ class Layout implements ICSS {
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

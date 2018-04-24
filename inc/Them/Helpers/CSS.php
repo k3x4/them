@@ -8,10 +8,12 @@ class CSS {
 
     private $CSSTable;
     private $CSSMediaTable;
+    private $CSSMediaRetinaTable;
     
     public function __construct() {
         $this->CSSTable = [];
         $this->CSSMediaTable = [];
+        $this->CSSMediaRetinaTable = [];
     }
     
     public function makeMediaCSS(Media\IMediaCSS $mediaCSS, $tag, $containerSize) {
@@ -26,6 +28,11 @@ class CSS {
     public function addCSSMedia(ICSS $cssObj){
         $CSSMediaArray = $cssObj->getCSSMedia();
         $this->CSSMediaTable = $this->mediaMerge($this->CSSMediaTable, $CSSMediaArray);
+    }
+    
+    public function addCSSMediaRetina(ICSS $cssObj){
+        $CSSMediaArray = $cssObj->getCSSMediaRetina();
+        $this->CSSMediaRetinaTable = $this->mediaMerge($this->CSSMediaRetinaTable, $CSSMediaArray);
     }
     
     public function mediaMerge(){
@@ -48,6 +55,10 @@ class CSS {
     
     public function getCSSMedia(){
         return $this->CSSMediaTable;
+    }
+    
+    public function getCSSMediaRetina(){
+        return $this->CSSMediaRetinaTable;
     }
 
 }

@@ -39,4 +39,8 @@ class VerticalTwoRight implements ICSS {
         ];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

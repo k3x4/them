@@ -50,4 +50,8 @@ class Layout implements ICSS{
         return $CSS->mediaMerge($generalCSSMedia, $typeCSSMedia, $rowsCSSMedia);
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

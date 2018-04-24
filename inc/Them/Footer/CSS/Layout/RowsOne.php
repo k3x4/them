@@ -26,4 +26,8 @@ class RowsOne implements ICSS{
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

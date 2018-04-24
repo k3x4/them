@@ -31,4 +31,8 @@ class Logo implements ICSS {
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

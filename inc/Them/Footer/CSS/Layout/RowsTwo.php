@@ -30,4 +30,8 @@ class RowsTwo implements ICSS{
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

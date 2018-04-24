@@ -20,6 +20,13 @@ class CSS implements ICSS {
         $CSS->addCSSMedia(new CSS\Styling);
         return $CSS->getCSSMedia();
     }
+    
+    public function getCSSMediaRetina() {
+        $CSS = new Helpers\CSS;
+        $CSS->addCSSMediaRetina(new CSS\Layout);
+        $CSS->addCSSMediaRetina(new CSS\Styling);
+        return $CSS->getCSSMediaRetina();
+    }
 
 }
 

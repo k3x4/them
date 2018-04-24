@@ -34,4 +34,8 @@ class Fluid extends Header\Main\Layout implements ICSS{
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

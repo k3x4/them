@@ -21,4 +21,8 @@ class Fluid extends Footer\Main\Layout implements ICSS{
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

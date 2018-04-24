@@ -47,5 +47,9 @@ class Vertical implements ICSS {
         $media[BOOTSTRAP_VERTICAL_MENU_BREAKPOINT][] = $this->generalCSSMedia();
         return $media;
     }
+    
+    public function getCSSMediaRetina() {
+        return [];
+    }
 
 }

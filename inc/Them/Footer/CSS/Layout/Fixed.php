@@ -36,4 +36,8 @@ class Fixed extends Footer\Main\Layout implements ICSS{
         return $queries;
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

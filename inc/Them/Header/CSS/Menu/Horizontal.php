@@ -29,4 +29,8 @@ class Horizontal implements ICSS {
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

@@ -18,6 +18,12 @@ class CSS implements ICSS {
         $CSS->addCSSMedia(new CSS\Logo);
         return $CSS->getCSSMedia();
     }
+    
+    public function getCSSMediaRetina() {
+        $CSS = new Helpers\CSS;
+        $CSS->addCSSMediaRetina(new CSS\Logo);
+        return $CSS->getCSSMediaRetina();
+    }
 
 }
 

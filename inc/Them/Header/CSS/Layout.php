@@ -24,4 +24,8 @@ class Layout implements ICSS {
         return $this->type->getCSSMedia();
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

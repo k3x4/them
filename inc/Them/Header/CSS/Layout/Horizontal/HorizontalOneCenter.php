@@ -13,5 +13,9 @@ class HorizontalOneCenter implements ICSS{
     public function getCSSMedia() {
         return [];
     }
+    
+    public function getCSSMediaRetina() {
+        return [];
+    }
 
 }

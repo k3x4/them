@@ -90,6 +90,12 @@ them-h1l .main-navigation{float:right;}
 .content.container .widget-area, .content.container-fluid .widget-area{padding:20px;}
 .content.container .content-area-wrapper, .content.container-fluid .content-area-wrapper{padding:0px 15px 0px 15px;}
 .content.container .content-area-wrapper #main, .content.container-fluid .content-area-wrapper #main{padding:20px;}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+.test3{height:30px;}
+.test4{height:40px;}
+.test1{height:10px;}
+.test4{height:50px;}
+}
 @media (min-width: 1200px) {
 .header-wrapper.container{width:1100px;}
 .content.container{width:1100px;}

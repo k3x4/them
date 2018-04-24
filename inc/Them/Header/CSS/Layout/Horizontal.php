@@ -71,4 +71,8 @@ class Horizontal implements ICSS {
         return $CSS->mediaMerge($generalCSSMedia, $typeCSSMedia, $layoutCSSMedia);
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

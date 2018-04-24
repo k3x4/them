@@ -42,4 +42,8 @@ class VerticalTwoLeft implements ICSS {
         ];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

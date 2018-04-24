@@ -83,4 +83,8 @@ class Styling implements ICSS {
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

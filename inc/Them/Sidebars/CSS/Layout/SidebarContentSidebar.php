@@ -52,4 +52,8 @@ class SidebarContentSidebar implements ICSS{
         return [];
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

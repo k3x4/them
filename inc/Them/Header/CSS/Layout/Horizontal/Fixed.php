@@ -53,4 +53,8 @@ class Fixed extends Header\Main\Layout implements ICSS{
         return $queries;
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }

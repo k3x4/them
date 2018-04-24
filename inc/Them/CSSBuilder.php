@@ -8,24 +8,25 @@ class CSSBuilder {
     
     private $CSS;
     private $CSSMedia;
+    private $CSSMediaRetina;
     private $CSSObjects;
     
     public function __construct() {
         $this->CSSObjects = [];
         $this->CSSMedia = [];
+        $this->CSSMediaRetina = [];
         $this->CSS = '';
     }
     
     public function tableToCSS($cssTable) {
         $CSS = '';
-
         foreach ($cssTable as $tag => $block) {
             if ($block && is_array($block)) {
                 $CSS .= $tag . '{';
                 foreach ($block as $property => $value) {
                     $CSS .= $property . ':' . $value . ';';
                 }
-                $CSS .= '}' . "\n";
+                $CSS .= '}' . PHP_EOL;
             }
         }
 
@@ -44,12 +45,20 @@ class CSSBuilder {
     
     private function makeCSSMedia() {
         foreach($this->CSSMedia as $media => $blocks){
-            $this->CSS .= '@media (min-width: ' . $media . 'px) {' . "\n";
+            $this->CSS .= '@media (min-width: ' . $media . 'px) {' . PHP_EOL;
             foreach($blocks as $block){
                 $this->CSS .= $this->tableToCSS($block);
             }
-            $this->CSS .= '}' . "\n";
+            $this->CSS .= '}' . PHP_EOL;
         }
+    }
+    
+    private function makeCSSMediaRetina() {
+        $this->CSS .= '@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {' . PHP_EOL;
+        foreach($this->CSSMediaRetina as $block){
+            $this->CSS .= $this->tableToCSS($block);
+        }
+        $this->CSS .= '}' . PHP_EOL;
     }
     
     private function mergeCSSArray($finalArray, $CSSArray) {
@@ -72,6 +81,7 @@ class CSSBuilder {
             
             $CSS = $instance->getCSS();
             $CSSMedia = $instance->getCSSMedia();
+            $CSSMediaRetina = $instance->getCSSMediaRetina();
             
             foreach ($CSS as $block) {
                 $finalArray = $this->mergeCSSArray($finalArray, $block);    
@@ -82,9 +92,13 @@ class CSSBuilder {
                     $this->CSSMedia[$media][] = $block;
                 }
             }
+            foreach ($CSSMediaRetina as $blocks) {
+                $this->CSSMediaRetina[] = $blocks;
+            }
             
         }
         $this->CSS .= $this->tableToCSS($finalArray);
+        $this->makeCSSMediaRetina();
         $this->makeCSSMedia();
     }
 

@@ -43,4 +43,8 @@ class Fixed implements ICSS{
         return $queries;
     }
     
+    public function getCSSMediaRetina() {
+        return [];
+    }
+    
 }
