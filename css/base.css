@@ -2,6 +2,18 @@ html {
     font-size: 100%;
 }
 
+.clear:before,
+.clear:after {
+  content: "";
+  display: table;
+} 
+.clear:after {
+  clear: both;
+}
+.clear {
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
 .them-h1l .main-navigation{
     float: right;
 }

@@ -54,6 +54,10 @@ class CSSBuilder {
     }
     
     private function makeCSSMediaRetina() {
+        if(!$this->CSSMediaRetina){
+            return;
+        }
+        
         $this->CSS .= '@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {' . PHP_EOL;
         foreach($this->CSSMediaRetina as $block){
             $this->CSS .= $this->tableToCSS($block);

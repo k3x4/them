@@ -13,15 +13,35 @@ class Logo extends Options {
         return false;
     }
     
-    public function getLogoURL() {
-        return $this->options['default']['url'];
+    public function getDefaultLogo() {
+        return $this->options['default'];
     }
     
-    public function getPadding(){
+    public function getDefaultRetinaLogo() {
+        return $this->options['default-retina'];
+    }
+    
+    public function customWidthEnable(){
+        return filter_var($this->options['default-custom-width'], FILTER_VALIDATE_BOOLEAN);
+    }
+    
+    public function customHeightEnable(){
+        return filter_var($this->options['default-custom-height'], FILTER_VALIDATE_BOOLEAN);
+    }
+    
+    public function getDefaultLogoCustomWidth(){
+        return $this->options['default-custom-width-size'];
+    }
+    
+    public function getDefaultLogoCustomHeight(){
+        return $this->options['default-custom-height-size'];
+    }
+    
+    public function getDefaultLogoPadding(){
         return $this->options['default-padding'];
     }
     
-    public function getMargin(){
+    public function getDefaultLogoMargin(){
         return $this->options['default-margin'];
     }
 

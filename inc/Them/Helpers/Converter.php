@@ -116,4 +116,45 @@ class Converter {
         }
     }
     
+    private static function calculateSize($newSecondSize, $origSecondSize, $ratio) {
+        $newSize = $origSecondSize;
+
+        if ($newSecondSize > $origSecondSize) {
+            $newSize *= $ratio;
+        } else {
+            $newSize /= $ratio;
+        }
+        
+        return $newSize;
+    }
+    
+    public static function customImageSizeToCSS($origWidth, $newWidth, $origHeight, $newHeight, $customWidth, $customHeight) {
+        
+        $origWidth = intval($origWidth);
+        $newWidth = intval($newWidth);
+        $origHeight = intval($origHeight);
+        $newHeight = intval($newHeight);
+        
+        $ratio = $origWidth / $origHeight;
+        
+        if ($customWidth && $customHeight) {
+            $newWidth = intval($newWidth);
+            $newHeight = intval($newHeight);
+        } else {
+            if ($customWidth) {
+                $newHeight = self::calculateSize($newWidth, $origWidth, $ratio);
+            }
+            if ($customHeight) {
+                $newWidth = self::calculateSize($newHeight, $origHeight, $ratio);
+            }
+        }
+
+        $result = [
+            'width' => intval($newWidth),
+            'height' => intval($newHeight)
+        ];
+
+        return $result;
+    }
+
 }
