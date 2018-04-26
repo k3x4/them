@@ -43,7 +43,7 @@ class Logo implements ICSS {
 
         $cssBlock = [];
         
-        if ($defaultLogo['url']) {
+        if (isset($defaultLogo['url']) && $defaultLogo['url']) {
             
             $defaultLogoUrl = $defaultLogo['url'];
             $dimensions = $this->getDefaultLogoSize();
@@ -88,7 +88,7 @@ class Logo implements ICSS {
 
         $cssBlock = [];
         
-        if ($defaultRetinaLogo['url']) {
+        if (isset($defaultRetinaLogo['url']) && $defaultRetinaLogo['url']) {
             
             $defaultRetinaLogoUrl = $defaultRetinaLogo['url'];
             $dimensions = $this->getDefaultLogoSize();

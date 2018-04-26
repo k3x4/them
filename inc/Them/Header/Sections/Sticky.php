@@ -42,59 +42,59 @@ class Sticky implements ISection {
                     'type' => 'switch',
                     'title' => 'Sticky Header Animation',
                     'subtitle' => 'Turn on to allow the sticky header to animate to a smaller height when activated.',
-                    'default' => true,
+                    'default' => false,
                     'required' => ['header_sticky_default', '=', true]
                 ],
                 [
                     'id' => 'header_sticky_background-color',
                     'type' => 'color',
+                    'transparent' => false,
                     'title' => __('Sticky Header Background Color', THEME_DOMAIN),
                     'subtitle' => __('Controls the background color for the sticky header.', THEME_DOMAIN),
-                    'default' => '#000000',
+                    'default' => '#FFFFFF',
                     'required' => ['header_sticky_default', '=', true]
                 ],
-                [
-                    'id' => 'header_sticky_menu-item-margin',
-                    'type' => 'spacing',
-                    'mode' => 'margin',
-                    'units' => ['px', 'em', '%'],
-                    'units_extended' => true,
-                    'title' => __('Sticky Header Menu Item Margin', THEME_DOMAIN),
-                    'subtitle' => __('Controls the space between each menu item in the sticky header.', THEME_DOMAIN),
-                    'default' => [
-                        'margin-top' => '1',
-                        'margin-right' => '2',
-                        'margin-bottom' => '3',
-                        'margin-left' => '4',
-                        'units' => 'px'
-                    ],
-                    'required' => ['header_sticky_default', '=', true]
-                ],
+                /*
                 [
                     'id' => 'header_sticky_menu-item-padding',
-                    'type' => 'spacing',
-                    'mode' => 'padding',
-                    'units' => ['px', 'em', '%'],
+                    'type' => 'them_spacing',
+                    'mode' => 'margin',
+                    'units' => ['px'],
                     'units_extended' => true,
                     'title' => __('Sticky Header Menu Item Padding', THEME_DOMAIN),
                     'subtitle' => __('Controls the space inside each menu item in the sticky header.', THEME_DOMAIN),
                     'default' => [
-                        'padding-top' => '1px',
-                        'padding-right' => '2px',
-                        'padding-bottom' => '3px',
-                        'padding-left' => '4px',
+                        'sameall' => '1',
+                        'padding-top' => '0px',
+                        'padding-right' => '0px',
+                        'padding-bottom' => '0px',
+                        'padding-left' => '0px',
                         'units' => 'px'
                     ],
+                    'select2' => ['allowClear' => false],
                     'required' => ['header_sticky_default', '=', true]
                 ],
                 [
-                    'id' => 'header_sticky_nav_font_size',
-                    'type' => 'text',
-                    'title' => __('Sticky Header Navigation Font Size', THEME_DOMAIN),
-                    'subtitle' => __('Controls the font size of the menu items in the sticky header.', THEME_DOMAIN),
-                    'default' => '12px',
+                    'id' => 'header_sticky_menu-item-margin',
+                    'type' => 'them_spacing',
+                    'mode' => 'margin',
+                    'units' => ['px'],
+                    'units_extended' => true,
+                    'title' => __('Sticky Header Menu Item Margin', THEME_DOMAIN),
+                    'subtitle' => __('Controls the space between each menu item in the sticky header.', THEME_DOMAIN),
+                    'default' => [
+                        'sameall' => '1',
+                        'margin-top' => '0px',
+                        'margin-right' => '0px',
+                        'margin-bottom' => '0px',
+                        'margin-left' => '0px',
+                        'units' => 'px'
+                    ],
+                    'select2' => ['allowClear' => false],
                     'required' => ['header_sticky_default', '=', true]
-                ]
+                ],
+                */
+                
             ]
         ]);
         
