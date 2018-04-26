@@ -12,6 +12,7 @@ class CSS implements ICSS {
         $CSS->addCSS(new CSS\Layout);
         $CSS->addCSS(new CSS\Styling);
         $CSS->addCSS(new CSS\Menu);
+        $CSS->addCSS(new CSS\Sticky);
         return $CSS->getCSS();
     }
 
@@ -20,6 +21,7 @@ class CSS implements ICSS {
         $CSS->addCSSMedia(new CSS\Layout);
         $CSS->addCSSMedia(new CSS\Styling);
         $CSS->addCSSMedia(new CSS\Menu);
+        $CSS->addCSSMedia(new CSS\Sticky);
         return $CSS->getCSSMedia();
     }
     
@@ -28,6 +30,7 @@ class CSS implements ICSS {
         $CSS->addCSSMediaRetina(new CSS\Layout);
         $CSS->addCSSMediaRetina(new CSS\Styling);
         $CSS->addCSSMediaRetina(new CSS\Menu);
+        $CSS->addCSSMediaRetina(new CSS\Sticky);
         return $CSS->getCSSMediaRetina();
     }
 
