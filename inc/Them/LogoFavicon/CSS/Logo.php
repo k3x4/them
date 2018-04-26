@@ -7,60 +7,87 @@ use Them\ICSS;
 use Them\Helpers;
 
 class Logo implements ICSS {
-     
-    public function getCSS() {
-        $logo = new LogoFavicon\Main\Logo;
-        
-        $defaultLogoPadding = $logo->getDefaultLogoPadding();  
-        $defaultLogoPadding = Helpers\Converter::spacingToCSS($defaultLogoPadding, 'padding');
-        
-        $defaultLogoMargin = $logo->getDefaultLogoMargin();  
-        $defaultLogoMargin = Helpers\Converter::spacingToCSS($defaultLogoMargin, 'margin');
-        
-        $cssBlocks = [];
-        $cssBlocks[] = [
-            '.logo-col' => [
-                'padding' => $defaultLogoPadding,
-                'margin' => $defaultLogoMargin
-            ]
+    
+    private $logo;
+    
+    public function __construct() {
+        $this->logo = new LogoFavicon\Main\Logo;
+    }
+    
+    private function getDefaultLogoSize() {
+        $defaultLogo = $this->logo->getDefaultLogo();
+
+        $dimensions = [
+            'width'     => $defaultLogo['width'],
+            'height'    => $defaultLogo['height']
         ];
         
-        $defaultLogo = $logo->getDefaultLogo();
+        if ($this->logo->customWidthEnable() || $this->logo->customHeightEnable()) {
+            $customWidth = $this->logo->getDefaultLogoCustomWidth();
+            $customHeight = $this->logo->getDefaultLogoCustomHeight();
+            $dimensions = Helpers\Converter::customImageSizeToCSS(
+                    $dimensions['width'],
+                    $customWidth['width'],
+                    $dimensions['height'],
+                    $customHeight['height'],
+                    $this->logo->customWidthEnable(),
+                    $this->logo->customHeightEnable()
+            );
+        }
         
-        if ($defaultLogo):
+        return $dimensions;
+    }
 
-            $defaultLogoWidth = $defaultLogo['width'];
-            $defaultLogoHeight = $defaultLogo['height'];
+    private function getDefaultLogo(){
+        $defaultLogo = $this->logo->getDefaultLogo();
+
+        $cssBlock = [];
+        
+        if ($defaultLogo) {
+            
             $defaultLogoUrl = $defaultLogo['url'];
+            $dimensions = $this->getDefaultLogoSize();
 
-            if ($logo->customWidthEnable() || $logo->customHeightEnable()):
-                $defaultLogoCustomWidth = $logo->getDefaultLogoCustomWidth();
-                $defaultLogoCustomHeight = $logo->getDefaultLogoCustomHeight();
-                $sizes = Helpers\Converter::customImageSizeToCSS(
-                        $defaultLogoWidth,
-                        $defaultLogoCustomWidth['width'],
-                        $defaultLogoHeight,
-                        $defaultLogoCustomHeight['height'],
-                        $logo->customWidthEnable(),
-                        $logo->customHeightEnable()
-                );
-                
-                $defaultLogoWidth = $sizes['width'];
-                $defaultLogoHeight = $sizes['height'];
-            endif;
-
-            $cssBlocks[] = [
+            $cssBlock = [
                 '.logo-col #logo' => [
                     'background-image' => 'url("' . $defaultLogoUrl . '")',
-                    'background-size' => $defaultLogoWidth . 'px ' . $defaultLogoHeight . 'px',
+                    'background-size' => $dimensions['width'] . 'px ' . $dimensions['height'] . 'px',
                     'background-repeat' => 'no-repeat',
                     'display' => 'block',
-                    'width' => $defaultLogoWidth . 'px',
-                    'height' => $defaultLogoHeight . 'px',
+                    'width' => $dimensions['width'] . 'px',
+                    'height' => $dimensions['height'] . 'px',
                 ]
             ];
 
-        endif;
+        }
+
+        return $cssBlock;
+    }
+    
+    private function getDefaultLogoSpacing(){
+        $logo = new LogoFavicon\Main\Logo;
+
+        $padding = $this->logo->getDefaultLogoPadding();
+        $padding = Helpers\Converter::spacingToCSS($padding, 'padding');
+
+        $margin = $this->logo->getDefaultLogoMargin();
+        $margin = Helpers\Converter::spacingToCSS($margin, 'margin');
+
+        $cssBlock = [
+            '.logo-col' => [
+                'padding' => $padding,
+                'margin' => $margin
+            ]
+        ];
+        
+        return $cssBlock;
+    }
+    
+    public function getCSS() {
+        $cssBlocks = [];
+        
+        $cssBlocks[] = $this->getDefaultLogo();
+        $cssBlocks[] = $this->getDefaultLogoSpacing();
 
         return $cssBlocks;
     }
@@ -68,9 +95,9 @@ class Logo implements ICSS {
     public function getCSSMedia() {
         return [];
     }
-    
+
     public function getCSSMediaRetina() {
         return [];
     }
-    
+
 }
