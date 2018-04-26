@@ -44,6 +44,8 @@ class CSSBuilder {
     }
     
     private function makeCSSMedia() {
+        $this->CSSMedia = array_filter($this->CSSMedia);
+        
         foreach($this->CSSMedia as $media => $blocks){
             $this->CSS .= '@media (min-width: ' . $media . 'px) {' . PHP_EOL;
             foreach($blocks as $block){
@@ -54,6 +56,8 @@ class CSSBuilder {
     }
     
     private function makeCSSMediaRetina() {
+        $this->CSSMediaRetina = array_filter($this->CSSMediaRetina);
+        
         if(!$this->CSSMediaRetina){
             return;
         }

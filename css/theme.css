@@ -80,8 +80,8 @@ html, body{color:#585858;}
 a, a:link, a:visited{color:#336699;}
 a:hover, a:focus{color:#3366CC;}
 body #page{background:transparent;}
-.logo-col #logo{background-image:url("http://localhost/them/wp-content/uploads/2018/04/Logo-medium.png");background-size:500px 156px;background-repeat:no-repeat;display:block;width:500px;height:156px;}
-.logo-col{padding:20px 15px 20px 15px;margin:0;}
+.logo-col #logo{background-image:url("http://localhost/them/wp-content/uploads/2018/04/logo-default.png");background-size:150px 47px;background-repeat:no-repeat;display:block;width:150px;height:47px;}
+.logo-col{padding:20px 15px 20px 15px;margin:0px;}
 .header-wrapper.container{padding:0 15px 0 15px;}
 .header.container{padding:0 15px 0 15px;}
 them-h1l .main-navigation{float:right;}
@@ -103,6 +103,9 @@ them-h1l .main-navigation{float:right;}
 .content.container .widget-area, .content.container-fluid .widget-area{padding:20px;}
 .content.container .content-area-wrapper, .content.container-fluid .content-area-wrapper{padding:0 15px 0 15px;}
 .content.container .content-area-wrapper #main, .content.container-fluid .content-area-wrapper #main{padding:20px;}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+.logo-col #logo{background-image:url("http://localhost/them/wp-content/uploads/2018/04/logo-retina.png");}
+}
 @media (min-width: 1200px) {
 .header-wrapper.container{width:1100px;}
 .content.container{width:1100px;}

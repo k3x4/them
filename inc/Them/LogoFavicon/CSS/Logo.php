@@ -43,7 +43,7 @@ class Logo implements ICSS {
 
         $cssBlock = [];
         
-        if ($defaultLogo) {
+        if ($defaultLogo['url']) {
             
             $defaultLogoUrl = $defaultLogo['url'];
             $dimensions = $this->getDefaultLogoSize();
@@ -83,6 +83,27 @@ class Logo implements ICSS {
         return $cssBlock;
     }
     
+    public function getDefaultRetinaLogo(){
+        $defaultRetinaLogo = $this->logo->getDefaultRetinaLogo();
+
+        $cssBlock = [];
+        
+        if ($defaultRetinaLogo['url']) {
+            
+            $defaultRetinaLogoUrl = $defaultRetinaLogo['url'];
+            $dimensions = $this->getDefaultLogoSize();
+
+            $cssBlock = [
+                '.logo-col #logo' => [
+                    'background-image' => 'url("' . $defaultRetinaLogoUrl . '")'
+                ]
+            ];
+
+        }
+
+        return $cssBlock;
+    }
+    
     public function getCSS() {
         $cssBlocks = [];
         
@@ -97,7 +118,11 @@ class Logo implements ICSS {
     }
 
     public function getCSSMediaRetina() {
-        return [];
+        $cssBlocks = [];
+        
+        $cssBlocks[] = $this->getDefaultRetinaLogo();
+
+        return $cssBlocks;
     }
 
 }
