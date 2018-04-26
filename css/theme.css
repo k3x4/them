@@ -81,7 +81,7 @@ a, a:link, a:visited{color:#336699;}
 a:hover, a:focus{color:#3366CC;}
 body #page{background:transparent;}
 .logo-col{padding:20px 15px 20px 15px;margin:0;}
-.logo-col #logo{background-image:url("http://localhost/them/wp-content/uploads/2018/04/Logo-medium.png");background-size:90px 156px;background-repeat:no-repeat;display:block;width:90px;height:156px;}
+.logo-col #logo{background-image:url("http://localhost/them/wp-content/uploads/2018/04/Logo-medium.png");background-size:801px 250px;background-repeat:no-repeat;display:block;width:801px;height:250px;}
 .header-wrapper.container{padding:0 15px 0 15px;}
 .header.container{padding:0 15px 0 15px;}
 them-h1l .main-navigation{float:right;}

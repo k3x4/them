@@ -116,16 +116,28 @@ class Converter {
         }
     }
     
-    private static function calculateSize($newSecondSize, $origSecondSize, $ratio) {
-        $newSize = $origSecondSize;
+    private static function calculateHeightDimension($newWidth, $ratio) {
+        $newHeight = 0;
 
-        if ($newSecondSize > $origSecondSize) {
-            $newSize *= $ratio;
+        if ($ratio < 1) {
+            $newHeight = $newWidth * $ratio;
         } else {
-            $newSize /= $ratio;
+            $newHeight = $newWidth / $ratio;
         }
         
-        return $newSize;
+        return intval($newHeight);
+    }
+    
+    private static function calculateWidthDimension($newHeight, $ratio) {
+        $newWidth = 0;
+
+        if ($ratio < 1) {
+            $newWidth = $newHeight / $ratio;
+        } else {
+            $newWidth = $newHeight * $ratio;
+        }
+        
+        return intval($newWidth);
     }
     
     public static function customImageSizeToCSS($origWidth, $newWidth, $origHeight, $newHeight, $customWidth, $customHeight) {
@@ -135,26 +147,26 @@ class Converter {
         $origHeight = intval($origHeight);
         $newHeight = intval($newHeight);
         
-        $ratio = $origWidth / $origHeight;
-        
-        if ($customWidth && $customHeight) {
-            $newWidth = intval($newWidth);
-            $newHeight = intval($newHeight);
-        } else {
-            if ($customWidth) {
-                $newHeight = self::calculateSize($newWidth, $origWidth, $ratio);
-            }
-            if ($customHeight) {
-                $newWidth = self::calculateSize($newHeight, $origHeight, $ratio);
-            }
-        }
-
-        $result = [
-            'width' => intval($newWidth),
-            'height' => intval($newHeight)
+        $dimensions = [
+            'width' => $newWidth,
+            'height' => $newHeight
         ];
 
-        return $result;
+        if ($customWidth && $customHeight) {
+            return $dimensions;
+        }
+        
+        $ratio = $origWidth / $origHeight;
+        
+        if($customWidth){
+            $dimensions['height'] = self::calculateHeightDimension($newWidth, $ratio);
+        }
+        
+        if($customHeight){
+            $dimensions['width'] = self::calculateWidthDimension($newHeight, $ratio);
+        }
+
+        return $dimensions;
     }
 
 }
