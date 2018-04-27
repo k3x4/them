@@ -8,7 +8,7 @@
  */
 ?>
 
-<header id="masthead" class="site-header">
+<header id="masthead" class="site-header <?php echo themClass('header_sticky')->getStickyClass(); ?>">
 
     <?php $header = themClass('header_layout'); ?>
 

@@ -46,6 +46,16 @@ class Sticky implements ISection {
                     'required' => ['header_sticky_default', '=', true]
                 ],
                 [
+                    'id' => 'header_sticky_offset',
+                    'type' => 'dimensions',
+                    'units' => ['px'],
+                    'width' => false,
+                    'title' => __('Offset sticky appearing', THEME_DOMAIN),
+                    'default' => [
+                        'height' => 0,
+                    ],
+                ],
+                [
                     'id' => 'header_sticky_background-color',
                     'type' => 'color',
                     'transparent' => false,

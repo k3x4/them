@@ -19,11 +19,17 @@ class Hooks implements IHook {
 
         add_action('after_setup_theme', [$headerLayout, 'registerMenus']);
         add_filter('body_class', [$this, 'addBodyClass']);
+        add_action('wp_enqueue_scripts', [$this, 'addJSVars']);
     }
     
     public function addBodyClass($classes) {
         $classes[] = 'them-' . $this->header->getLayout();
         return $classes;
+    }
+    
+    public function addJSVars(){
+        $sticky = new Main\Sticky;
+        wp_localize_script( 'them-frontend', 'headerVars', $sticky->getJSVars() );
     }
     
 }

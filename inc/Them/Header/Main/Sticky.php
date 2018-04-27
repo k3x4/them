@@ -11,8 +11,23 @@ class Sticky extends Options {
         return filter_var($this->options['default'], FILTER_VALIDATE_BOOLEAN);
     }
     
+    public function getJSVars(){
+        $vars = [];
+        
+        $vars['stickyOffset'] = intval($this->options['offset']['height']);
+        
+        return $vars;
+    }
+    
+    public function getStickyClass(){
+        $cssClass = 'sticky-wrapper';
+        if($this->stickyEnabled()){
+            return $cssClass;
+        }
+    }
+    
     public function getHeaderBackground() {
-        return Helpers\Converter::Background(__CLASS__, 'background-color');
+        return $this->options['background-color'];
     }
 
 }

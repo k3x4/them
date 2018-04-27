@@ -9,7 +9,7 @@ class HorizontalOneLeft implements ICSS {
     public function getCSS() {
         $cssBlocks = [];
         $cssBlocks[] = [
-            'them-' . ORIENTATION_HORIZONTAL_TYPE1_LEFT . ' .main-navigation' => [
+            '.them-' . ORIENTATION_HORIZONTAL_TYPE1_LEFT . ' .main-navigation' => [
                 'float' => 'right'
             ]
         ];
