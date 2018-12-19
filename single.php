@@ -9,7 +9,7 @@
 get_header();
 ?>
 
-<div class="wrapper" id="wrapper-index">
+<div class="wrapper">
 
     <div class="<?php echo themClass('content_layout')->getContainerClass(); ?>" id="content" tabindex="-1">
 
